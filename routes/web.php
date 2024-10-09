@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\http\Controllers\Admin\AuthController;
+use App\Http\Controllers\DashboardController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +16,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing.index');
+});
+
+
+Route::prefix('admin')->group(function () {
+
+    // Routes without authentication (login routes)
+    Route::get('/login-admin', [AuthController::class, 'showLoginForm'])->name('admin.login');
+    Route::post('/login-admin', [AuthController::class, 'login'])->name('admin.login.post');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('admin.logout');
+
+    // Routes that require authentication with 'auth:admin' guard
+    Route::middleware('auth:admin')->group(function () {
+
+        // Admin Dashboard
+        Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+
+    });
+
 });
 
 Auth::routes();
