@@ -11,7 +11,7 @@
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100">
-                <form method="POST" class="login100-form validate-form" action="{{ route('login') }}">
+                <form method="POST" class="login100-form validate-form" action="{{ route('admin.login.post') }}">
                     @csrf
                     <span class="login100-form-title p-b-43">
                         Login Admin

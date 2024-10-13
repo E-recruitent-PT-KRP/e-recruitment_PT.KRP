@@ -35,7 +35,7 @@ Route::prefix('admin')->group(function () {
     Route::middleware('auth:admin')->group(function () {
 
         // Admin Dashboard
-        Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+        // Route::get('/', [AdminController::class, 'index'])->name('admin.index');
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
 
     });

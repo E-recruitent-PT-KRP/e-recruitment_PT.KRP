@@ -23,10 +23,11 @@ class AuthController extends Controller
         if (Auth::guard('admin')->attempt($credentials)) {
             // Regenerasi session
             $request->session()->regenerate();
-            
-            // Redirect ke dashboard atau halaman tujuan
-            return redirect()->intended('/admin/dashboard');
+        
+            // Redirect ke dashboard admin
+            return redirect()->route('admin.dashboard'); // Pastikan ini menggunakan nama rute yang benar
         }
+        
         
         return back()->withErrors([
             'email' => 'Kredensial salah.',
