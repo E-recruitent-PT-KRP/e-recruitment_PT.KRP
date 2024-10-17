@@ -1,14 +1,14 @@
 @extends('layout.app')
 @section('konten')
     <!-- Hero Section -->
-    <section id="hero" class="hero section light-background">
+    <section id="hero" class="hero section" style="background-image: url('assets/img/menu/kontruksi.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 80vh;background-color: rgba(255, 255, 255, 0.7); background-blend-mode: overlay;">
+       
 
         <div class="container">
             <div class="row gy-4 justify-content-center justify-content-lg-between">
                 <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center">
-                    <h1 data-aos="fade-up">Enjoy Your Work<br>Delicious Think</h1>
-                    <p data-aos="fade-up" data-aos-delay="100">We are team of talented designers making websites
-                        with Bootstrap</p>
+                    <h1 data-aos="fade-up">Solusi Tepat Tenaga Kerja dan Konstruksi</h1>
+                    <p data-aos="fade-up" data-aos-delay="100"> Mitra Profesional dalam Penyediaan Tenaga Kerja, Transportasi, Material, dan Konstruksi, Membangun Kerja Sama untuk Kemajuan Bersama</p>
                     <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
                         <a href="{{ route('login') }}" class="btn-get-started">Login/Register</a>
                         {{-- <a href="#book-a-table" class="btn-get-secondary">Register</a> --}}
@@ -17,9 +17,9 @@
                                 class="bi bi-play-circle"></i><span>Register</span></a> --}}
                     </div>
                 </div>
-                <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
-                    <img src="assets/img/menu/stress-work.jpg" class="img-fluid animated" alt="">
-                </div>
+                {{-- <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
+                    <img src="assets/img/menu/kontruksi.jpg" class="img-fluid animated" alt="">
+                </div> --}}
             </div>
         </div>
 
@@ -30,8 +30,8 @@
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h2>About Us<br></h2>
-            <p><span>Learn More</span> <span class="description-title">About Us</span></p>
+            <h2>Tentang Kami<br></h2>
+            <p><span>Pelajari </span> <span class="description-title">Selengkapnya</span></p>
         </div><!-- End Section Title -->
 
         <div class="container">
@@ -40,18 +40,18 @@
                 <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
                     <img src="assets/img/about.jpg" class="img-fluid mb-4" alt="">
                     <div class="book-a-table">
-                        <h3>Book a Table</h3>
-                        <p>+1 5589 55488 55</p>
+                        <h3>Ajukan Pertanyaan</h3>
+                        <p>+62 815-7491-2141</p>
                     </div>
                 </div>
                 <div class="col-lg-5" data-aos="fade-up" data-aos-delay="250">
                     <div class="content ps-0 ps-lg-5">
-                        <p class="fst-italic">
+                        {{-- <p class="fst-italic">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore
                             magna aliqua.
-                        </p>
-                        <ul>
+                        </p> --}}
+                        {{-- <ul>
                             <li><i class="bi bi-check-circle-fill"></i> <span>Ullamco laboris nisi ut aliquip ex ea
                                     commodo consequat.</span></li>
                             <li><i class="bi bi-check-circle-fill"></i> <span>Duis aute irure dolor in reprehenderit
@@ -59,12 +59,29 @@
                             <li><i class="bi bi-check-circle-fill"></i> <span>Ullamco laboris nisi ut aliquip ex ea
                                     commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta
                                     storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
-                        </ul>
+                        </ul> --}}
                         <p>
-                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                            reprehenderit in voluptate
-                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident
+                            PT KARYA RAMA PERKASA         
+                            ( KRP ) berdiri
+                             sebagai perusahaan di bidang Penyedia tenaga
+                             kerja,transportasi, suplier material,Konstruksi
+                             ,Dll. Perusahaan kami menawarkan kerja sama dengan
+                             berbagai perusahaan pada berbagai bentuk
+                             pekerjaansesuaibidangkeahlian perusaan kami.
+                             Company Profile ini di buat sebagai dasar
+                             pertimbangan, penawaran, kerja sama, dan informasi
+                             produk yang dapat di kerjakan oleh perusahaan kami,
+                             perusahaan kami memiliki pengalaman dan value yang
+                             bagus di perusahaan lain tentunya bisa menjadi
+                             bahan pertimbangan bagi perusahaan atau instansi
+                             bapak / ibu untuk memberi kepercayaan kepada
+                             kami.
+                             Semoga Company profile perusahaan kami dapat
+                             memberi wacana dan pertimbangan untuk menjalin
+                             kerja sama yang baik. Akhir kata, kami ucapkan
+                             terima kasih atas kesempatan bapak / ibu menerima
+                             dan membaca company profile ini dan kami harapkan
+                             kerjasamanya
                         </p>
 
                         <div class="position-relative mt-4">

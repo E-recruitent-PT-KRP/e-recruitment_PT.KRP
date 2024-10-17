@@ -9,7 +9,7 @@
     <nav id="navmenu" class="navmenu">
         <ul>
             <li><a href="#hero" class="active">Home<br></a></li>
-            <li><a href="#about">Product</a></li>
+            <li><a href="#about">Tentang Kami</a></li>
             <li><a href="#menu">Promo</a></li>
             <li><a href="#events">Events</a></li>
             <li><a href="#gallery">Gallery</a></li>
@@ -17,7 +17,7 @@
             <li class="dropdown"><a href="#"><span>Karir</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                     <li><a href="#">About Us</a></li>
-                    <li><a href="{{ route('careeruser.index') }}">Lowongan Pekerjaan</a></li>
+                    {{-- <li><a href="{{ route('careeruser.index') }}">Lowongan Pekerjaan</a></li> --}}
                 </ul>
             </li>
             @endif
@@ -40,15 +40,15 @@
             <!-- Tampilkan Absensi hanya untuk role selain 'User' -->
             @if (Auth::check() && Auth::user()->akses !== 'User')
             <li>
-                <a class="dropdown-item" href="{{ route('karyawan.absensi') }}">
+                {{-- <a class="dropdown-item" href="{{ route('karyawan.absensi') }}">
                     Absensi
-                </a>
+                </a> --}}
             </li>
 
             @endif
 
             <!-- Tentukan tautan Profile berdasarkan peran (akses) -->
-            <li>
+            {{-- <li>
                 @if (Auth::check() && Auth::user()->akses === 'User')
                 <a class="dropdown-item" href="{{ route('pelamar.index') }}">
                     Profile
@@ -58,7 +58,7 @@
                     Profile
                 </a>
                 @endif
-            </li>
+            </li> --}}
 
             <!-- Logout -->
             <li>

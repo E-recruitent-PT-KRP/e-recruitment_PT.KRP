@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\http\Controllers\Admin\AuthController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
+use App\http\Controllers\Admin\AuthController;
 
 
 /*
@@ -42,10 +43,12 @@ Route::prefix('admin')->group(function () {
 
 });
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes(['verify' => true]);
+Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('verified');
 
-Auth::routes();
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
