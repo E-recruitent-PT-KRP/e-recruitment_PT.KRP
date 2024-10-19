@@ -17,7 +17,7 @@
             <li class="dropdown"><a href="#"><span>Karir</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                     <li><a href="#">About Us</a></li>
-                    {{-- <li><a href="{{ route('careeruser.index') }}">Lowongan Pekerjaan</a></li> --}}
+                    <li><a href="{{ route('careeruser.index') }}">Lowongan Pekerjaan</a></li>
                 </ul>
             </li>
             @endif

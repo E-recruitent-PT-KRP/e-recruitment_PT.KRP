@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PelamarController;
 use App\Http\Controllers\DashboardController;
 use App\http\Controllers\Admin\AuthController;
+use App\Http\Controllers\CareeruserController;
 
 
 /*
@@ -51,6 +52,7 @@ Route::get('/profile',[HomeController::class, 'profile'])->name('profile')->midd
 
 Route::prefix('user')->middleware('verified')->group(function(){
     Route::resource('/pelamar',PelamarController::class);
+    Route::resource('/careeruser', CareeruserController::class);
     Route::get('/cv/{id}', [PelamarController::class, 'showCv'])->name('cv.show');
 
 });
