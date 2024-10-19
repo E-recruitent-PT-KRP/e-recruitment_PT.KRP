@@ -20,26 +20,11 @@
         </li>
 
 
-        <li class="menu-item {{ Route::is('') || Route::is('') ? 'active open' : '' }}">
-            <a href="javascript:void(0);"
-                class="menu-link menu-toggle {{ Auth::user()->akses != 'Admin' ? 'disabled' : '' }}">
-                <i class="menu-icon tf-icons bx bx-user-x"></i>
-                <div>Master Career</div>
+        <li class="menu-item {{ Route::is('career.*') ? 'active' : '' }}">
+            <a href="{{ route('career.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-network-chart"></i>
+                <div data-i18n="Account Settings">Manage Lowongan Pekerjaan</div>
             </a>
-            <ul class="menu-sub">
-                <li class="menu-item {{ Route::is('') ? 'active' : '' }}">
-                    <a href="" class="menu-link">
-                        <i class="menu-icon tf-icons bx bx-money"></i>
-                        <div data-i18n="Account Settings">Data Pelamar</div>
-                    </a>
-                </li>
-                <li class="menu-item {{ Route::is('') ? 'active' : '' }}">
-                    <a href="" class="menu-link">
-                        <i class="menu-icon tf-icons bx bx-network-chart"></i>
-                        <div data-i18n="Account Settings">Manage Lowongan Pekerjaan</div>
-                    </a>
-                </li>
-            </ul>
         </li>
     </ul>
 </aside>

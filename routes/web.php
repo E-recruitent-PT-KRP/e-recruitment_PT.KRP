@@ -5,7 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PelamarController;
 use App\Http\Controllers\DashboardController;
 use App\http\Controllers\Admin\AuthController;
-use App\Http\Controllers\CareeruserController;
+use App\Http\Controllers\DashboardController;
 
 
 /*
@@ -41,6 +41,15 @@ Route::prefix('admin')->group(function () {
         // Route::get('/', [AdminController::class, 'index'])->name('admin.index');
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
 
+        //career
+        Route::controller(CareerController::class)->name('career.')->group(function () {
+            Route::get('/career', 'index')->name('index');
+            Route::get('/career/create', 'create')->name('create');
+            Route::post('/career', 'store')->name('store');
+            Route::get('/career/{id}/edit', 'edit')->name('edit');
+            Route::put('/career/{id}', 'update')->name('update');
+            Route::delete('/career/{id}', 'destroy')->name('destroy');
+        });
     });
 
 });

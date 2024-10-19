@@ -3,30 +3,14 @@
 @section('content')
 <div class="row justify-content-center">
     <div class="col-md-12">
-        <div class="alert alert-primary" role="alert" style="background-color: #3C91E6; color: #fff">
-
-            @if (auth()->user()->akses == 'Admin')
+        <div class="alert alert-primary" role="alert" style="background-color: #3C91E6; color: #fff;">
             <center>
-                <strong>Selamat Datang {{ ucwords(Auth::user()->name) }} Kamu Login Sebagai
-                    {{ Auth::user()->akses }}
+                <strong>Selamat Datang {{ ucwords(Auth::user()->name) }}!
                 </strong>
             </center>
-            @else
-            <center>
-                <strong>Selamat Datang {{ ucwords(Auth::user()->name) }} Anda Login Sebagai
-                    {{ Auth::user()->akses }}
-                    {{ Auth::user()->sekolah->nama ?? '' }}</strong>
-            </center>
-            @endif
-
         </div>
-        @if (auth()->user()->akses == 'Admin')
-
-        @endif
-
-
-        </h5>
     </div>
+
 </div>
 @endsection
 
