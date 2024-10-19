@@ -2,10 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CareerController;
 use App\Http\Controllers\PelamarController;
 use App\Http\Controllers\DashboardController;
 use App\http\Controllers\Admin\AuthController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CareeruserController;
 
 
 /*
