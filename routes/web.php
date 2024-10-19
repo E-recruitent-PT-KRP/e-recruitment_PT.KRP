@@ -64,8 +64,12 @@ Route::prefix('user')->middleware('verified')->group(function(){
     Route::resource('/pelamar',PelamarController::class);
     Route::resource('/careeruser', CareeruserController::class);
     Route::get('/cv/{id}', [PelamarController::class, 'showCv'])->name('cv.show');
+    
+    Route::post('/career/store/{id}', [CareeruserController::class, 'store'])->name('careeruser.store');
 
 });
+
+Route::get('/careeruser/applyjob', [CareeruserController::class, 'applyJob'])->name('careeruser.applyJob');
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

@@ -311,10 +311,10 @@ class PelamarController extends Controller
         $user->save();
 
         // Update data di tabel 'pendaftar' juga
-        // $pendaftar = Pendaftar::findOrFail($id);
-        // $pendaftar->name = $request->input('nama_lengkap'); // Ubah nama di tabel 'users'
-        // $pendaftar->email = $request->input('email'); // Ubah email di tabel 'users'
-        // $pendaftar->save();
+        $pendaftar = Pendaftar::findOrFail($id);
+        $pendaftar->name = $request->input('nama_lengkap'); // Ubah nama di tabel 'users'
+        $pendaftar->email = $request->input('email'); // Ubah email di tabel 'users'
+        $pendaftar->save();
 
 
         return redirect()->route('pelamar.index')->with('success', 'Data pelamar berhasil diperbarui!');
