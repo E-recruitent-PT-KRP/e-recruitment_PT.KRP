@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Career;
 
 class Pendaftar extends Model
 {
@@ -29,7 +30,7 @@ class Pendaftar extends Model
     // Relasi ke Job
     public function job()
     {
-        return $this->belongsTo(Job::class, 'job_id');
+        return $this->belongsTo(Career::class, 'job_id');
     }
 
 

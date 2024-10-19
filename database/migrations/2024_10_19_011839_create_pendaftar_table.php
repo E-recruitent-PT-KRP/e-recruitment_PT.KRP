@@ -16,7 +16,8 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Foreign key untuk menghubungkan dengan users
             $table->string('name');
             $table->string('email');
-            $table->foreignId('job_id')->constrained('job')->onDelete('cascade');
+            // Ubah 'job' menjadi 'career'
+            $table->foreignId('job_id')->constrained('careers')->onDelete('cascade');
             $table->date('application_date');
             $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
             $table->timestamps();

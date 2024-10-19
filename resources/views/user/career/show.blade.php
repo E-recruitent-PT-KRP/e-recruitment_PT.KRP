@@ -20,27 +20,27 @@
                 <div class="card-body">
                     <div>
                         <h5 style="font-size: 30px; font-weight: 450; ">
-                            {{ $job->job_name }}
+                            {{ $career->job_name }}
                         </h5>
                         <!-- Menampilkan Detail Pekerjaan -->
                         <h5>Deskripsi Pekerjaan:</h5>
-                        <p>{{ $job->job_desc }}</p>
+                        <p>{{ $career->job_desc }}</p>
 
                         <h5>Persyaratan:</h5>
                         <ul>
-                            <li>Kriteria: <br>{{ $job->job_criteria }}</li>
-                            <li>Maksimal Umur: {{ $job->maximum_age }} th</li>
-                            <li>Pendidikan: {{ $job->minimum_education }}</li>
-                            <li>Jurusan: {{ $job->major }}</li>
+                            <li>Kriteria: <br>{{ $career->job_criteria }}</li>
+                            <li>Maksimal Umur: {{ $career->maximum_age }} th</li>
+                            <li>Pendidikan: {{ $career->minimum_education }}</li>
+                            <li>Jurusan: {{ $career->major }}</li>
 
                         </ul><br>
-                        <p>Sallary: {{ $job->salary }}</p>
+                        <p>Sallary: {{ $career->salary }}</p>
 
                         <h5>Tanggal Pembukaan:</h5>
-                        <p>{{ $job->open_date }} s/d {{ $job->close_date }}</p>
+                        <p>{{ $career->open_date }} s/d {{ $career->close_date }}</p>
 
                         <!-- Status Pekerjaan -->
-                        @if (now()->between($job->open_date, $job->close_date))
+                        @if (now()->between($career->open_date, $career->close_date))
                             <span class="badge bg-success">Open</span>
                         @else
                             <span class="badge bg-secondary">Closed</span>

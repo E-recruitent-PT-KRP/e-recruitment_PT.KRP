@@ -50,7 +50,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ($jobs as $job)
+                                    @forelse ($careers as $job)
                                         <tr>
                                             <td>{{ $job->id }}</td>
                                             <td>
@@ -77,28 +77,24 @@
                                                     <li>
                                                         @if (auth()->check())
                                                             @php
-                                                                // Cek apakah user sudah melamar pekerjaan ini
-                                                                $hasApplied = $user->pendaftar->contains(
-                                                                    'job_id',
-                                                                    $job->id,
-                                                                );
+                                                                $user = auth()->user(); // Ambil user yang sedang login
+                                                                // Cek apakah pendaftar ada dan apakah user sudah melamar pekerjaan ini
+                                                                $hasApplied = $user->pendaftar
+                                                                    ? $user->pendaftar->contains('job_id', $job->id)
+                                                                    : false;
                                                             @endphp
+
                                                             @if (now()->between($job->open_date, $job->close_date))
                                                                 @if ($hasApplied)
-                                                                    <button class="btn btn-success" style="margin-top: 10px"
-                                                                        disabled>Sudah Daftar</button>
+                                                                    <button class="btn btn-success" style="margin-top: 10px" disabled>Sudah Daftar</button>
                                                                 @else
-                                                                    <form
-                                                                        action="{{ route('careeruser.store', ['id' => $job->id]) }}"
-                                                                        method="POST">
+                                                                    <form action="{{ route('careeruser.store', ['id' => $job->id]) }}" method="POST">
                                                                         @csrf
-                                                                        <button type="submit" class="btn btn-primary"
-                                                                            style="margin-top: 10px">Apply</button>
+                                                                        <button type="submit" class="btn btn-primary" style="margin-top: 10px">Apply</button>
                                                                     </form>
                                                                 @endif
                                                             @else
-                                                            <button class="btn btn-secondary" style="margin-top: 10px"
-                                                            disabled>Ditutup</button>
+                                                                <button class="btn btn-secondary" style="margin-top: 10px" disabled>Ditutup</button>
                                                             @endif
 
                                                             <a href="{{ route('careeruser.show', ['careeruser' => $job->id]) }}"

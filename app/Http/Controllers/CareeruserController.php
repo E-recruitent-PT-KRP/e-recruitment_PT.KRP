@@ -3,21 +3,20 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
-use App\Models\Job;
+use App\Models\Career; // Ubah Job menjadi Career
 use App\Models\Pelamar;
 use App\Models\Pendaftar;
 use Illuminate\Http\Request;
 
 class CareeruserController extends Controller
 {
-
     public function applyJob()
     {
         // Ambil user yang sedang login
         $user = auth()->user();
 
         // Ambil semua data pendaftar berdasarkan user yang sedang login
-        $pendaftar = \App\Models\Pendaftar::where('user_id', $user->id)->get();
+        $pendaftar = Pendaftar::where('user_id', $user->id)->get();
 
         // Jika pelamar belum ada, tampilkan pesan atau arahkan ke halaman lain
         if ($pendaftar->isEmpty()) {
@@ -25,18 +24,18 @@ class CareeruserController extends Controller
         }
 
         // Ambil pekerjaan terkait jika ada (bisa disesuaikan)
-        $job = \App\Models\Job::first(); // Atau sesuaikan pengambilan job
+        $career = Career::first(); // Mengambil data pertama dari tabel Career
 
         // Kirim data ke view
-        return view('user.career.apply', compact('pendaftar', 'job'));
+        return view('user.career.apply', compact('pendaftar', 'career'));
     }
+
     public function index()
     {
-
-        $jobs = Job::all()->map(function ($job) {
-            $job->open_date = Carbon::parse($job->open_date)->format('d F Y');
-            $job->close_date = Carbon::parse($job->close_date)->format('d F Y');
-            return $job;
+        $careers = Career::all()->map(function ($career) {
+            $career->open_date = Carbon::parse($career->open_date)->format('d F Y');
+            $career->close_date = Carbon::parse($career->close_date)->format('d F Y');
+            return $career;
         });
 
         $user = auth()->user(); // Mendapatkan user yang sedang login
@@ -44,9 +43,8 @@ class CareeruserController extends Controller
         // Mengambil semua data pendaftar berdasarkan user_id yang sedang login
         $pendaftar = Pendaftar::where('user_id', $user->id)->get();
 
-        return view('user.career.index', compact('jobs', 'user', 'pendaftar'));
+        return view('user.career.index', compact('careers', 'user', 'pendaftar'));
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -54,7 +52,7 @@ class CareeruserController extends Controller
     public function create($id)
     {
         // Ambil detail pekerjaan berdasarkan ID
-        $job = Job::findOrFail($id);
+        $career = Career::findOrFail($id);
 
         // Ambil data pelamar berdasarkan user yang sedang login
         $pelamar = Pelamar::where('user_id', auth()->user()->id)->first();
@@ -65,7 +63,7 @@ class CareeruserController extends Controller
         }
 
         // Return ke view create dengan data pekerjaan dan pelamar
-        return view('user.career.create', compact('job', 'pelamar'));
+        return view('user.career.create', compact('career', 'pelamar'));
     }
 
     /**
@@ -79,7 +77,7 @@ class CareeruserController extends Controller
         ]);
 
         // Ambil detail pekerjaan berdasarkan ID
-        $job = Job::findOrFail($id);
+        $career = Career::findOrFail($id);
 
         // Ambil data pelamar berdasarkan user yang sedang login
         $pelamar = Pelamar::where('user_id', auth()->user()->id)->first();
@@ -92,40 +90,25 @@ class CareeruserController extends Controller
         $pendaftar = new Pendaftar();
         $pendaftar->name = auth()->user()->name;
         $pendaftar->email = auth()->user()->email;
-        $pendaftar->job_id = $job->id;
+        $pendaftar->job_id = $career->id; // Pastikan ini sesuai dengan tabel Pendaftar
         $pendaftar->user_id = auth()->user()->id; // Set user_id dari user yang sedang login
         $pendaftar->application_date = now();
         $pendaftar->status = 'pending'; // Status default
         $pendaftar->save();
 
-
         return redirect()->route('careeruser.index')->with('success', 'Pendaftaran berhasil!');
     }
+
     /**
      * Display the specified resource.
      */
     public function show(string $id)
     {
-        $job = Job::findOrFail($id); // Mengambil pekerjaan berdasarkan ID
-        $job->open_date = Carbon::parse($job->open_date)->format('d F Y');
-        $job->close_date = Carbon::parse($job->close_date)->format('d F Y');
-        return view('user.career.show', compact('job')); // Kirim data job ke view
+        $career = Career::findOrFail($id); // Mengambil pekerjaan berdasarkan ID
+        $career->open_date = Carbon::parse($career->open_date)->format('d F Y');
+        $career->close_date = Carbon::parse($career->close_date)->format('d F Y');
+        return view('user.career.show', compact('career')); // Kirim data career ke view
     }
-
-    // public function applyForm($id)
-    // {
-    //     $job = Job::findOrFail($id);
-    //     $user = auth()->user();
-
-    //     // Cek apakah user sudah melamar pekerjaan ini
-    //     $pendaftar = Pendaftar::where('user_id', $user->id)->where('job_id', $id)->first();
-
-
-    //     // Kirim data lamaran ke view jika sudah melamar, jika belum, kirim null
-    //     return view('user.career.apply', compact('job', 'pendaftar'));
-    // }
-
-
 
     /**
      * Show the form for editing the specified resource.
