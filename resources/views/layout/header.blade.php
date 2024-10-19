@@ -60,6 +60,26 @@
                 @endif
             </li> --}}
 
+            <li>
+                <a class="dropdown-item" href="{{ route('pelamar.index') }}">
+                    Profil
+                </a>
+            </li>
+
+            {{-- <li>
+                @if(auth()->user()->pelamar) 
+                    <!-- Jika pelamar sudah ada -->
+                    <a class="dropdown-item" href="{{ route('pelamar.show') }}">
+                        Profil
+                    </a>
+                @else
+                    <!-- Jika pelamar belum ada -->
+                    <a class="dropdown-item" href="{{ route('profile') }}">
+                        Profil
+                    </a>
+                @endif
+            </li> --}}
+
             <!-- Logout -->
             <li>
                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); 

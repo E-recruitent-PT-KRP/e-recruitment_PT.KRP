@@ -34,5 +34,10 @@ class HomeController extends Controller
         return view('landing.index');
     }
 
+    public function profile()
+    {
+        return view('user.profile.index');
+    }
+
 }
 

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PelamarController;
 use App\Http\Controllers\DashboardController;
 use App\http\Controllers\Admin\AuthController;
 
@@ -46,6 +47,13 @@ Route::prefix('admin')->group(function () {
 
 Auth::routes(['verify' => true]);
 Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('verified');
+Route::get('/profile',[HomeController::class, 'profile'])->name('profile')->middleware('verified');
+
+Route::prefix('user')->middleware('verified')->group(function(){
+    Route::resource('/pelamar',PelamarController::class);
+    Route::get('/cv/{id}', [PelamarController::class, 'showCv'])->name('cv.show');
+
+});
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
