@@ -26,5 +26,11 @@
                 <div data-i18n="Account Settings">Manage Lowongan Pekerjaan</div>
             </a>
         </li>
+        <li class="menu-item {{ Route::is('pendaftar.index') ? 'active' : '' }}">
+            <a href="{{ route('pendaftar.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-network-chart"></i>
+                <div data-i18n="Account Settings">Manage Data Pelamar</div>
+            </a>
+        </li>
     </ul>
 </aside>

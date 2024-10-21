@@ -36,11 +36,20 @@ class CareerController extends Controller
 
         return redirect()->route('career.index')->with('success', 'Career created successfully.');
     }
+    // public function edit($id)
+    // {
+    //     $careers = Career::findOrFail($id);
+    //     return view('admin.career.edit', compact('careers'));
+    // }
     public function edit($id)
-    {
-        $careers = Career::findOrFail($id);
-        return view('admin.career.edit', compact('careers'));
-    }
+{
+    // Ambil data pekerjaan berdasarkan ID
+    $job = Career::findOrFail($id);
+
+    // Kirim data ke view
+    return view('admin.career.edit', compact('job'));
+}
+
 
     public function update(Request $request, $id)
     {

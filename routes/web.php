@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\PelamarController;
+use App\Http\Controllers\PendaftarController;
 use App\Http\Controllers\DashboardController;
 use App\http\Controllers\Admin\AuthController;
 use App\Http\Controllers\CareeruserController;
@@ -42,14 +43,23 @@ Route::prefix('admin')->group(function () {
         // Route::get('/', [AdminController::class, 'index'])->name('admin.index');
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
 
-        //career
-        Route::controller(CareerController::class)->name('career.')->group(function () {
-            Route::get('/career', 'index')->name('index');
-            Route::get('/career/create', 'create')->name('create');
-            Route::post('/career', 'store')->name('store');
-            Route::get('/career/{id}/edit', 'edit')->name('edit');
-            Route::put('/career/{id}', 'update')->name('update');
-            Route::delete('/career/{id}', 'destroy')->name('destroy');
+        Route::name('career.')->group(function () {
+            Route::get('/career', [CareerController::class, 'index'])->name('index');
+            Route::get('/career/create', [CareerController::class, 'create'])->name('create');
+            Route::post('/career', [CareerController::class, 'store'])->name('store');
+            Route::get('/career/{id}/edit', [CareerController::class, 'edit'])->name('edit');
+            Route::put('/career/{id}', [CareerController::class, 'update'])->name('update');
+            Route::delete('/career/{id}', [CareerController::class, 'destroy'])->name('destroy');
+        });
+
+        //Pendaftar
+        // Route::get('pendaftar', [PendaftarController::class, 'index'])->name('pendaftar.index');
+        // Route::get('pendaftar/{careerId}', [PendaftarController::class, 'index'])->name('pendaftar.index');
+
+        // Pendaftar Routes
+        Route::controller(PendaftarController::class)->name('pendaftar.')->group(function () {
+            Route::get('/pendaftar', 'index')->name('index');
+            Route::get('/pendaftar/{id}', 'show')->name('show');
         });
     });
 
