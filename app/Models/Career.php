@@ -20,4 +20,10 @@ class Career extends Model
         'job_desc',
         'job_criteria',
     ];
+
+      // Relasi Career ke Pendaftar (Career memiliki banyak Pendaftar)
+      public function pendaftar()
+      {
+          return $this->hasMany(Pendaftar::class, 'job_id');
+      }
 }
