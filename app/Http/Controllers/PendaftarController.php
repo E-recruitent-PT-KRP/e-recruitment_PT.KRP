@@ -26,9 +26,12 @@ class PendaftarController extends Controller
     }
     public function show($id)
     {
+        // Cari data pendaftar berdasarkan ID
         $pendaftar = Pendaftar::findOrFail($id);
-        $pelamar = Pelamar::findOrFail($id);
-
+        
+        // Cari pelamar yang berkaitan dengan pendaftar tersebut
+        $pelamar = Pelamar::where('id', $pendaftar->user_id)->firstOrFail();
+    
         return view('admin.pendaftar.show', compact('pendaftar','pelamar'));
     }
 

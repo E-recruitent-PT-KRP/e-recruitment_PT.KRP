@@ -25,7 +25,7 @@
             cellspacing="0">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>No</th>
                     <th>Nama</th>
                     <th>Email</th>
                     <th>Job Title</th>
@@ -37,7 +37,7 @@
             <tbody id="pendaftarTableBody">
                 @foreach ($pendaftar as $item)
                 <tr data-job-id="{{ $item->job_id }}">
-                    <td>{{ $item->id }}</td>
+                    <td class="row-number"></td> <!-- Tempat untuk nomor urut -->
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->email }}</td>
                     <td>{{ $item->job->job_name }}</td>
@@ -65,7 +65,7 @@
     </div>
 </div>
 
-<script>
+{{-- <script>
     function filterByJob() {
         var selectedId = document.getElementById('selectJob').value;
         var rows = document.querySelectorAll('#pendaftarTableBody tr');
@@ -78,5 +78,36 @@
             }
         });
     }
+</script> --}}
+<script>
+    function updateRowNumbers() {
+        var rows = document.querySelectorAll('#pendaftarTableBody tr');
+        var rowIndex = 1; // Memulai penomoran dari 1
+
+        rows.forEach(function(row) {
+            row.querySelector('.row-number').textContent = rowIndex++; // Update nomor urut
+        });
+    }
+
+    function filterByJob() {
+        var selectedId = document.getElementById('selectJob').value;
+        var rows = document.querySelectorAll('#pendaftarTableBody tr');
+        var rowIndex = 1; // Memulai penomoran dari 1
+
+        rows.forEach(function(row) {
+            if (selectedId === "" || row.getAttribute('data-job-id') == selectedId) {
+                row.style.display = ""; // Tampilkan baris
+                row.querySelector('.row-number').textContent = rowIndex++; // Update nomor urut
+            } else {
+                row.style.display = "none"; // Sembunyikan baris
+            }
+        });
+    }
+
+    // Panggil fungsi untuk update nomor urut saat halaman dimuat
+    document.addEventListener('DOMContentLoaded', function() {
+        updateRowNumbers();
+    });
 </script>
+
 @endsection
