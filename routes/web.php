@@ -68,7 +68,7 @@ Route::prefix('user')->middleware('verified')->group(function(){
     Route::post('/career/store/{id}', [CareeruserController::class, 'store'])->name('careeruser.store');
 
 });
-
+                                                                                                                                                                                     
 Route::get('/careeruser/applyjob', [CareeruserController::class, 'applyJob'])->name('careeruser.applyJob');
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
