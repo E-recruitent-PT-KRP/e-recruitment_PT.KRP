@@ -41,6 +41,7 @@ class McuNotification extends Notification implements ShouldQueue
             ->greeting('Halo, ' . $this->pendaftar->name . '!')
             ->subject('Notifikasi MCU')
             ->line('Status Anda telah diperbarui menjadi "MCU".')
+            ->line('Jadwal MCU Anda Adalah Tanggal :' . $this->pendaftar->tanggal_mcu )
             ->line('Silakan cek aplikasi untuk informasi lebih lanjut.')
             ->line('Terima kasih!');
     }

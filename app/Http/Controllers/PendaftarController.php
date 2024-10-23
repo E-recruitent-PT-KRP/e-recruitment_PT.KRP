@@ -57,40 +57,88 @@ class PendaftarController extends Controller
 
 
 
-    public function tes($id)
+    public function tes(Request $request, $id)
     {
+        // Validasi input tanggal dan waktu tes
+        $request->validate([
+            'tanggal_tes' => 'required|date',
+            'waktu_tes' => 'required|date_format:H:i',
+        ]);
+
+        // Temukan pendaftar berdasarkan ID
         $pendaftar = Pendaftar::findOrFail($id);
-        $pendaftar->status = 'tes'; // Status 'pending' disesuaikan dengan kondisi 'proses'
+
+        // Ubah status menjadi 'tes'
+        $pendaftar->status = 'tes';
+
+        // Simpan tanggal dan waktu tes ke dalam kolom tanggal_tes
+        $pendaftar->tanggal_tes = $request->input('tanggal_tes') . ' ' . $request->input('waktu_tes');
+
+        // Simpan perubahan ke database
         $pendaftar->save();
 
         // Kirim notifikasi
         $pendaftar->notify(new TesNotification($pendaftar));
 
-        return redirect()->route('pendaftar.show', $pendaftar->id)->with('success', 'Status berhasil diubah menjadi Proses.');
+        // Redirect dengan pesan sukses
+        return redirect()->route('pendaftar.show', $pendaftar->id)
+            ->with('success', 'Status berhasil diubah menjadi Tes dan tanggal tes telah disimpan.');
     }
 
-    public function interview($id)
+    public function interview(Request $request, $id)
     {
+        // Validasi input tanggal dan waktu interview
+        $request->validate([
+            'tanggal_interview' => 'required|date',
+            'waktu_interview' => 'required|date_format:H:i',
+        ]);
+
+        // Temukan pendaftar berdasarkan ID
         $pendaftar = Pendaftar::findOrFail($id);
-        $pendaftar->status = 'interview'; // Status 'pending' disesuaikan dengan kondisi 'proses'
+
+        // Ubah status menjadi 'interview'
+        $pendaftar->status = 'interview';
+
+        // Simpan tanggal dan waktu interview ke dalam kolom tanggal_interview
+        $pendaftar->tanggal_interview = $request->input('tanggal_interview') . ' ' . $request->input('waktu_interview');
+
+        // Simpan perubahan ke database
         $pendaftar->save();
 
         // Kirim notifikasi
         $pendaftar->notify(new InterviewNotification($pendaftar));
 
-        return redirect()->route('pendaftar.show', $pendaftar->id)->with('success', 'Status berhasil diubah menjadi Proses.');
+        // Redirect dengan pesan sukses
+        return redirect()->route('pendaftar.show', $pendaftar->id)
+            ->with('success', 'Status berhasil diubah menjadi Interview dan tanggal interview telah disimpan.');
     }
 
-    public function mcu($id)
+    public function mcu(Request $request, $id)
     {
+        // Validasi input tanggal dan waktu MCU
+        $request->validate([
+            'tanggal_mcu' => 'required|date',
+            'waktu_mcu' => 'required|date_format:H:i',
+        ]);
+
+        // Temukan pendaftar berdasarkan ID
         $pendaftar = Pendaftar::findOrFail($id);
-        $pendaftar->status = 'mcu'; // Status 'pending' disesuaikan dengan kondisi 'proses'
+
+        // Ubah status menjadi 'mcu'
+        $pendaftar->status = 'mcu';
+
+        // Simpan tanggal dan waktu MCU ke dalam kolom tanggal_mcu
+        $pendaftar->tanggal_mcu = $request->input('tanggal_mcu') . ' ' . $request->input('waktu_mcu');
+
+        // Simpan perubahan ke database
         $pendaftar->save();
 
         // Kirim notifikasi
         $pendaftar->notify(new McuNotification($pendaftar));
 
-        return redirect()->route('pendaftar.show', $pendaftar->id)->with('success', 'Status berhasil diubah menjadi Proses.');
+        // Redirect dengan pesan sukses
+        return redirect()->route('pendaftar.show', $pendaftar->id)
+            ->with('success', 'Status berhasil diubah menjadi MCU dan tanggal MCU telah disimpan.');
     }
 
 

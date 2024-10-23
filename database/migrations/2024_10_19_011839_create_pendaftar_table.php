@@ -20,6 +20,9 @@ return new class extends Migration
             $table->foreignId('job_id')->constrained('careers')->onDelete('cascade');
             $table->date('application_date');
             $table->enum('status', ['pending', 'tes', 'interview','mcu', 'acc', 'ditolak'])->default('pending');
+            $table->datetime('tanggal_tes')->nullable();
+            $table->datetime('tanggal_interview')->nullable();
+            $table->datetime('tanggal_mcu')->nullable();
             $table->timestamps();
         });
     }

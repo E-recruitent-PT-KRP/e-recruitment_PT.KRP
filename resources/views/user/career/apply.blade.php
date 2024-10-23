@@ -22,6 +22,9 @@
                                         <th>Job</th>
                                         <th>Tanggal Pendaftaran</th>
                                         <th>Status</th>
+                                        <th>Tanggal Tes</th>
+                                        <th>Tanggal Interview</th>
+                                        <th>Tanggal MCU</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -32,6 +35,9 @@
                                             <td>{{ $lamaran->job->job_name }}</td>
                                             <td>{{ \Carbon\Carbon::parse($lamaran->application_date)->format('d-m-Y') }}</td>
                                             <td>{{ ucfirst($lamaran->status) }}</td>
+                                            <td>{{ $lamaran->tanggal_tes ? \Carbon\Carbon::parse($lamaran->tanggal_tes)->format('d-m-Y H:i') : 'Belum dijadwalkan' }}</td>
+                                            <td>{{ $lamaran->tanggal_interview ? \Carbon\Carbon::parse($lamaran->tanggal_interview)->format('d-m-Y H:i') : 'Belum dijadwalkan' }}</td>
+                                            <td>{{ $lamaran->tanggal_mcu ? \Carbon\Carbon::parse($lamaran->tanggal_mcu)->format('d-m-Y H:i') : 'Belum dijadwalkan' }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

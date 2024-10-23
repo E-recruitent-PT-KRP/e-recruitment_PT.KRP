@@ -42,6 +42,7 @@ class InterviewNotification extends Notification implements ShouldQueue
             ->greeting('Halo, ' . $this->pendaftar->name . '!')
             ->subject('Notifikasi Interview')
             ->line('Status Anda telah diperbarui menjadi "Interview".')
+            ->line('Jadwal Interview Anda Adalah Tanggal :' . $this->pendaftar->tanggal_interview)
             ->line('Silakan cek aplikasi untuk informasi lebih lanjut.')
             ->line('Terima kasih!');
     }

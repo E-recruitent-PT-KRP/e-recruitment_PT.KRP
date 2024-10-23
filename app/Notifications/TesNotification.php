@@ -29,6 +29,8 @@ class TesNotification extends Notification implements ShouldQueue
             ->greeting('Halo, ' . $this->pendaftar->name . '!')
             ->subject('Notifikasi Tes')
             ->line('Status Anda telah diperbarui menjadi "Tes".')
+            ->line('Jadwal Tes Anda Adalah Tanggal :' . $this->pendaftar->tanggal_tes )
+            ->line('aja klalen coblos Ahmad lutfi.')
             ->line('Silakan cek aplikasi untuk informasi lebih lanjut.')
             ->line('Terima kasih!');
     }
