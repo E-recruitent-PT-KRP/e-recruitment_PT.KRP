@@ -57,6 +57,9 @@
                         <a href="{{ route('pendaftar.show', $item->id) }}" class="btn btn-info btn-sm">
                             <i class="fa fa-eye fa-sm"></i>
                         </a>
+                        <a href="{{ route('pendaftar.showCv', $item->id) }}" class="btn btn-info btn-sm">CV
+                            {{-- <i class="fa fa-eye fa-sm"></i> --}}
+                        </a>
                     </td>
                 </tr>
                 @endforeach

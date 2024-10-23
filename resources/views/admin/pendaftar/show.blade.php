@@ -31,13 +31,29 @@
                         <p><strong>Status:</strong> {{ $pendaftar->status }}</p>
 
                         <!-- Tombol Aksi Ubah Status -->
-                        {{-- <div class="btn-group" role="group" aria-label="Aksi Status">
-                            <form action="{{ route('pendaftar.proses', $pendaftar->id) }}" method="POST"
+                        <div class="btn-group" role="group" aria-label="Aksi Status">
+                            <form action="{{ route('pendaftar.tes', $pendaftar->id) }}" method="POST"
                                 style="display:inline;" class="mx-2">
                                 @csrf
                                 @method('PATCH')
                                 <button type="submit" class="btn btn-warning"
-                                    onclick="return confirm('Apakah Anda yakin ingin mengubah status menjadi Proses?')">Proses</button>
+                                    onclick="return confirm('Apakah Anda yakin ingin mengubah status menjadi Proses?')">Proses Tes</button>
+                            </form>
+
+                            <form action="{{ route('pendaftar.interview', $pendaftar->id) }}" method="POST"
+                                style="display:inline;" class="mx-2">
+                                @csrf
+                                @method('PATCH')
+                                <button type="submit" class="btn btn-warning"
+                                    onclick="return confirm('Apakah Anda yakin ingin mengubah status menjadi Proses?')">Interview</button>
+                            </form>
+
+                            <form action="{{ route('pendaftar.mcu', $pendaftar->id) }}" method="POST"
+                                style="display:inline;" class="mx-2">
+                                @csrf
+                                @method('PATCH')
+                                <button type="submit" class="btn btn-warning"
+                                    onclick="return confirm('Apakah Anda yakin ingin mengubah status menjadi Proses?')">MCU</button>
                             </form>
 
                             <form action="{{ route('pendaftar.acc', $pendaftar->id) }}" method="POST"
@@ -59,7 +75,7 @@
                                 <a href="{{ route('cv.show', ['id' => $pelamar->id]) }}" class="btn btn-primary">Lihat
                                     CV</a>
                             </form>
-                        </div> --}}
+                        </div>
                     </div>
                 </div>
             </div>

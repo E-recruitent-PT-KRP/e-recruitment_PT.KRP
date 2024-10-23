@@ -60,6 +60,14 @@ Route::prefix('admin')->group(function () {
         Route::controller(PendaftarController::class)->name('pendaftar.')->group(function () {
             Route::get('/pendaftar', 'index')->name('index');
             Route::get('/pendaftar/{id}', 'show')->name('show');
+            Route::get('/cv/{id}', 'showCv')->name('showCv');
+
+            Route::patch('/pendaftar/{id}/tes', 'tes')->name('tes');
+            Route::patch('/pendaftar/{id}/interview', 'interview')->name('interview');
+            Route::patch('/pendaftar/{id}/mcu', 'mcu')->name('mcu');
+
+            Route::patch('/pendaftar/{id}/acc', 'acc')->name('acc');
+            Route::patch('/pendaftar/{id}/tolak', 'tolak')->name('tolak');
         });
     });
 
@@ -68,17 +76,17 @@ Route::prefix('admin')->group(function () {
 
 Auth::routes(['verify' => true]);
 Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('verified');
-Route::get('/profile',[HomeController::class, 'profile'])->name('profile')->middleware('verified');
+Route::get('/profile', [HomeController::class, 'profile'])->name('profile')->middleware('verified');
 
-Route::prefix('user')->middleware('verified')->group(function(){
-    Route::resource('/pelamar',PelamarController::class);
+Route::prefix('user')->middleware('verified')->group(function () {
+    Route::resource('/pelamar', PelamarController::class);
     Route::resource('/careeruser', CareeruserController::class);
     Route::get('/cv/{id}', [PelamarController::class, 'showCv'])->name('cv.show');
-    
+
     Route::post('/career/store/{id}', [CareeruserController::class, 'store'])->name('careeruser.store');
 
 });
-                                                                                                                                                                                     
+
 Route::get('/careeruser/applyjob', [CareeruserController::class, 'applyJob'])->name('careeruser.applyJob');
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

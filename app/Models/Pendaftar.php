@@ -2,13 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use App\Models\Career;
 use App\Models\User;
+use App\Models\Career;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Pendaftar extends Model
 {
+    use Notifiable; // Tambahkan ini
     use HasFactory;
 
     // Nama tabel sesuai dengan tabel di database
