@@ -8,6 +8,8 @@ use App\Http\Controllers\PendaftarController;
 use App\Http\Controllers\DashboardController;
 use App\http\Controllers\Admin\AuthController;
 use App\Http\Controllers\CareeruserController;
+use App\Http\Controllers\ArsipController;
+
 
 
 /*
@@ -66,9 +68,15 @@ Route::prefix('admin')->group(function () {
             Route::patch('/pendaftar/{id}/interview', 'interview')->name('interview');
             Route::patch('/pendaftar/{id}/mcu', 'mcu')->name('mcu');
 
-            Route::patch('/pendaftar/{id}/acc', 'acc')->name('acc');
+            Route::patch('/pendaftar/{id}/terima', 'terima')->name('terima');
             Route::patch('/pendaftar/{id}/tolak', 'tolak')->name('tolak');
         });
+
+        //Arsip career
+        Route::get('/arsip/data-diterima', [ArsipController::class, 'showAccepted'])->name('arsip.data-diterima');
+        Route::get('/arsip/data-ditolak', [ArsipController::class, 'showRejected'])->name('arsip.data-ditolak');
+
+
     });
 
 });

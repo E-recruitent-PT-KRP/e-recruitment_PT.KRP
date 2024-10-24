@@ -12,8 +12,7 @@
     <ul class="menu-inner py-1">
         <!-- Dashboard -->
         <li class="menu-item {{ Route::is('admin.dashboard') ? 'active open' : '' }}">
-            <a href="{{ route('admin.dashboard') }}"
-                class="menu-link {{ Auth::user()->akses != 'Admin' ? 'disabled' : '' }}">
+            <a href="{{ route('admin.dashboard') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
             </a>
@@ -31,6 +30,26 @@
                 <i class="menu-icon tf-icons bx bx-network-chart"></i>
                 <div data-i18n="Account Settings">Manage Data Pelamar</div>
             </a>
+        </li>
+        <li class="menu-item {{ Route::is('data-diterima.*') || Route::is('data-ditolak.*') ? 'active open' : '' }}">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-user-x"></i>
+                <div>Arsip E-recruitemnt</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item {{ Route::is('arsip.data-diterima') ? 'active' : '' }}">
+                    <a href="{{ route('arsip.data-diterima') }}" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-network-chart"></i>
+                        <div data-i18n="Account Settings">Data Diterima</div>
+                    </a>
+                </li>
+                <li class="menu-item {{ Route::is('arsip.data-ditolak') ? 'active' : '' }}">
+                    <a href="{{ route('arsip.data-ditolak') }}" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-block"></i>
+                        <div data-i18n="Account Settings">Data Ditolak</div>
+                    </a>
+                </li>
+            </ul>
         </li>
     </ul>
 </aside>

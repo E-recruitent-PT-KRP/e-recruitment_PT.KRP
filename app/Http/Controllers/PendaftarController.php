@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pelamar;
 use App\Models\Pendaftar;
 use Illuminate\Http\Request;
-use App\Notifications\AccNotification;
+use App\Notifications\AcceptedNotification;
 use App\Notifications\McuNotification;
 use App\Notifications\TesNotification;
 use App\Notifications\RejectedNotification;
@@ -142,16 +142,16 @@ class PendaftarController extends Controller
     }
 
 
-    public function acc($id)
+    public function terima($id)
     {
         $pendaftar = Pendaftar::findOrFail($id);
-        $pendaftar->status = 'acc'; // Status untuk 'ACC'
+        $pendaftar->status = 'diterima'; // Status untuk 'terima'
         $pendaftar->save();
 
         // Kirim notifikasi
-        $pendaftar->notify(new AccNotification($pendaftar));
+        $pendaftar->notify(new AcceptedNotification($pendaftar));
 
-        return redirect()->route('pendaftar.show', $pendaftar->id)->with('success', 'Status berhasil diubah menjadi ACC.');
+        return redirect()->route('pendaftar.show', $pendaftar->id)->with('success', 'Status berhasil diubah menjadi terima.');
     }
 
     public function tolak($id)

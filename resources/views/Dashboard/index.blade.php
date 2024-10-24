@@ -5,18 +5,54 @@
     <div class="col-md-12">
         <div class="alert alert-primary" role="alert" style="background-color: #3C91E6; color: #fff;">
             <center>
-                <strong>Selamat Datang {{ ucwords(Auth::user()->name) }}!
-                </strong>
+                <strong>Selamat Datang {{ ucwords(Auth::user()->name) }}!</strong>
             </center>
         </div>
     </div>
 
+    <!-- Card Info Section -->
+    <div class="col-md-12">
+        <ul class="box-info">
+            <!-- Card Pendaftar -->
+            <li>
+                <div class="bx">
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="text">
+                    <h3>{{ $totalPendaftar }}</h3>
+                    <p>Total Pendaftar</p>
+                </div>
+            </li>
+
+            <!-- Card Diterima -->
+            <li>
+                <div class="bx">
+                    <i class="bx bx-check-circle"></i>
+                </div>
+                <div class="text">
+                    <h3>{{ $totalDiterima }}</h3>
+                    <p>Pendaftar Diterima</p>
+                </div>
+            </li>
+
+            <!-- Card Ditolak -->
+            <li>
+                <div class="bx">
+                    <i class="bx bx-x-circle"></i>
+                </div>
+                <div class="text">
+                    <h3>{{ $totalDitolak }}</h3>
+                    <p>Pendaftar Ditolak</p>
+                </div>
+            </li>
+        </ul>
+    </div>
 </div>
 @endsection
 
 @push('after-style')
-
 <style>
+    /* Styles tetap sama dengan yang sudah ada sebelumnya */
     :root {
         --poppins: 'Poppins', sans-serif;
         --lato: 'Lato', sans-serif;
@@ -29,7 +65,6 @@
         --dark: #342E37;
         --red: #fa0800;
         --light-red: #ffffffe6;
-        --white: #fffffff0;
         --yellow: #FFCE26;
         --light-yellow: #FFF2C6;
         --orange: #FD7238;
@@ -78,28 +113,13 @@
     }
 
     .box-info li:nth-child(2) .bx {
-        background: var(--light-yellow);
-        color: var(--yellow);
-    }
-
-    .box-info li:nth-child(3) .bx {
-        background: var(--light-orange);
-        color: var(--orange);
-    }
-
-    .box-info li:nth-child(4) .bx {
-        background: var(--grey);
-        color: var(--dark-grey);
-    }
-
-    .box-info li:nth-child(5) .bx {
         background: var(--light-green);
         color: var(--green);
     }
 
-    .box-info li:nth-child(6) .bx {
-        background: var(--red);
-        color: var(--light-red);
+    .box-info li:nth-child(3) .bx {
+        background: var(--light-red);
+        color: var(--red);
     }
 
     .box-info li .text {
