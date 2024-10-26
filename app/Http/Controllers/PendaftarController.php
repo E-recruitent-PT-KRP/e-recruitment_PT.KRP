@@ -145,7 +145,7 @@ class PendaftarController extends Controller
     public function terima($id)
     {
         $pendaftar = Pendaftar::findOrFail($id);
-        $pendaftar->status = 'acc'; // Status untuk 'terima'
+        $pendaftar->status = 'diterima'; // Status untuk 'terima'
         $pendaftar->save();
 
         // Kirim notifikasi
