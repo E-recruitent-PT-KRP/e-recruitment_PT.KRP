@@ -154,9 +154,10 @@ class PendaftarController extends Controller
         return redirect()->route('pendaftar.show', $pendaftar->id)->with('success', 'Status berhasil diubah menjadi terima.');
     }
 
-    public function tolak($id)
+    public function tolak(Request $request, $id)
     {
         $pendaftar = Pendaftar::findOrFail($id);
+        $pendaftar->keterangan = $request->input('keterangan');
         $pendaftar->status = 'ditolak'; // Status untuk 'Ditolak'
         $pendaftar->save();
 

@@ -49,7 +49,7 @@ class RejectedNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject('PT Karya Rama Perkasa')
+            ->subject('Rejected Job')
             ->markdown('email.rejectedNotification', [
                 'pendaftar' => $this->pendaftar
             ]);

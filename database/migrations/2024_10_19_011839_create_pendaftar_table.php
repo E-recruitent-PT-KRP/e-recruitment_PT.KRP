@@ -23,6 +23,7 @@ return new class extends Migration
             $table->datetime('tanggal_tes')->nullable();
             $table->datetime('tanggal_interview')->nullable();
             $table->datetime('tanggal_mcu')->nullable();
+            $table->string('keterangan')->nullable();
             $table->timestamps();
         });
     }

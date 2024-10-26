@@ -5,6 +5,8 @@ Terima kasih telah meluangkan waktu untuk mengikuti proses seleksi di **PT Karya
 
 ---
 
+## Keterangan : {{ $pendaftar->keterangan }},
+
 ### Informasi Status Pendaftaran 🔔
 
 Kami ingin menginformasikan bahwa pendaftaran Anda untuk posisi tersebut saat ini **DITOLAK**. Keputusan ini tidak mencerminkan nilai dan potensi Anda, dan kami percaya bahwa Anda akan menemukan kesempatan yang lebih sesuai di masa mendatang.

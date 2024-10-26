@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
-use App\Models\Career; // Ubah Job menjadi Career
 use App\Models\Pelamar;
 use App\Models\Pendaftar;
 use Illuminate\Http\Request;
+use App\Notifications\ApplyNotification;
+use App\Models\Career; // Ubah Job menjadi Career
 
 class CareeruserController extends Controller
 {
@@ -95,6 +96,9 @@ class CareeruserController extends Controller
         $pendaftar->application_date = now();
         $pendaftar->status = 'pending'; // Status default
         $pendaftar->save();
+
+        // Kirim notifikasi
+        $pendaftar->notify(new ApplyNotification($pendaftar));
 
         return redirect()->route('careeruser.index')->with('success', 'Pendaftaran berhasil!');
     }

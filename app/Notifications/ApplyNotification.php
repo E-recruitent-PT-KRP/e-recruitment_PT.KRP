@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class AcceptedNotification extends Notification implements ShouldQueue
+class ApplyNotification extends Notification
 {
     use Queueable;
 
@@ -20,7 +20,6 @@ class AcceptedNotification extends Notification implements ShouldQueue
     {
         $this->pendaftar = $pendaftar;
     }
-
 
     /**
      * Get the notification's delivery channels.
@@ -35,22 +34,11 @@ class AcceptedNotification extends Notification implements ShouldQueue
     /**
      * Get the mail representation of the notification.
      */
-    // public function toMail($notifiable)
-    // {
-    //     return (new MailMessage)
-    //         ->greeting('Halo, ' . $this->pendaftar->name . '!')
-    //         ->subject('PT Karya Rama Perkasa')
-    //         ->line('Pendaftaran anda sebagai : '. $this->pendaftar->job->job_name)
-    //         ->line('Selamat Anda diterima pada PT Karya Rama Perkasa')
-    //         ->line('Silakan cek aplikasi untuk informasi lebih lanjut.')
-    //         ->line('Terima kasih!');
-    // }
-
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject('Accepted Job')
-            ->markdown('email.acceptedNotification', [
+            ->subject('Lamaran Berhasil Dikirim')
+            ->markdown('email.applyNotification', [
                 'pendaftar' => $this->pendaftar
             ]);
     }
