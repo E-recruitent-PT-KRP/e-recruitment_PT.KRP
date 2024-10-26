@@ -23,16 +23,26 @@ class TesNotification extends Notification implements ShouldQueue
         return ['mail'];
     }
 
+    // public function toMail($notifiable)
+    // {
+    //     return (new MailMessage)
+    //         ->greeting('Halo, ' . $this->pendaftar->name . '!')
+    //         ->subject('Notifikasi Tes')
+    //         ->line('Pendaftaran anda sebagai : '. $this->pendaftar->job->job_name)
+    //         ->line('Status Anda telah diperbarui menjadi "Tes".')
+    //         ->line('Jadwal Tes Anda Adalah Tanggal :' . $this->pendaftar->tanggal_tes )
+    //         ->line('aja klalen coblos Ahmad lutfi.')
+    //         ->line('Silakan cek aplikasi untuk informasi lebih lanjut.')
+    //         ->line('Terima kasih!');
+    // }
+
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->greeting('Halo, ' . $this->pendaftar->name . '!')
             ->subject('Notifikasi Tes')
-            ->line('Status Anda telah diperbarui menjadi "Tes".')
-            ->line('Jadwal Tes Anda Adalah Tanggal :' . $this->pendaftar->tanggal_tes )
-            ->line('aja klalen coblos Ahmad lutfi.')
-            ->line('Silakan cek aplikasi untuk informasi lebih lanjut.')
-            ->line('Terima kasih!');
+            ->markdown('email.tesNotification', [
+                'pendaftar' => $this->pendaftar
+            ]);
     }
 
     public function toArray($notifiable)

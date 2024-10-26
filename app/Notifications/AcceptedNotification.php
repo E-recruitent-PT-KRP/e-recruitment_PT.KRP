@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class AccNotification extends Notification implements ShouldQueue
+class AcceptedNotification extends Notification implements ShouldQueue
 {
     use Queueable;
 
@@ -35,14 +35,24 @@ class AccNotification extends Notification implements ShouldQueue
     /**
      * Get the mail representation of the notification.
      */
+    // public function toMail($notifiable)
+    // {
+    //     return (new MailMessage)
+    //         ->greeting('Halo, ' . $this->pendaftar->name . '!')
+    //         ->subject('PT Karya Rama Perkasa')
+    //         ->line('Pendaftaran anda sebagai : '. $this->pendaftar->job->job_name)
+    //         ->line('Selamat Anda diterima pada PT Karya Rama Perkasa')
+    //         ->line('Silakan cek aplikasi untuk informasi lebih lanjut.')
+    //         ->line('Terima kasih!');
+    // }
+
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->greeting('Halo, ' . $this->pendaftar->name . '!')
             ->subject('PT Karya Rama Perkasa')
-            ->line('Selamat Anda diterima pada PT Karya Rama Perkasa')
-            ->line('Silakan cek aplikasi untuk informasi lebih lanjut.')
-            ->line('Terima kasih!');
+            ->markdown('email.acceptedNotification', [
+                'pendaftar' => $this->pendaftar
+            ]);
     }
 
     /**

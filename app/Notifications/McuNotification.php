@@ -35,15 +35,25 @@ class McuNotification extends Notification implements ShouldQueue
     /**
      * Get the mail representation of the notification.
      */
+    // public function toMail($notifiable)
+    // {
+    //     return (new MailMessage)
+    //         ->greeting('Halo, ' . $this->pendaftar->name . '!')
+    //         ->subject('Notifikasi MCU')
+    //         ->line('Pendaftaran anda sebagai : '. $this->pendaftar->job->job_name)
+    //         ->line('Status Anda telah diperbarui menjadi "MCU".')
+    //         ->line('Jadwal MCU Anda Adalah Tanggal :' . $this->pendaftar->tanggal_mcu )
+    //         ->line('Silakan cek aplikasi untuk informasi lebih lanjut.')
+    //         ->line('Terima kasih!');
+    // }
+
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->greeting('Halo, ' . $this->pendaftar->name . '!')
-            ->subject('Notifikasi MCU')
-            ->line('Status Anda telah diperbarui menjadi "MCU".')
-            ->line('Jadwal MCU Anda Adalah Tanggal :' . $this->pendaftar->tanggal_mcu )
-            ->line('Silakan cek aplikasi untuk informasi lebih lanjut.')
-            ->line('Terima kasih!');
+            ->subject('Notifikasi Medical CheckUp')
+            ->markdown('email.mcuNotification', [
+                'pendaftar' => $this->pendaftar
+            ]);
     }
 
     /**

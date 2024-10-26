@@ -35,14 +35,24 @@ class RejectedNotification extends Notification
     /**
      * Get the mail representation of the notification.
      */
+    // public function toMail($notifiable)
+    // {
+    //     return (new MailMessage)
+    //         ->greeting('Halo, ' . $this->pendaftar->name . '!')
+    //         ->subject('PT Karya Rama Perkasa')
+    //         ->line('Pendaftaran anda sebagai : ' . $this->pendaftar->job->job_name)
+    //         ->line('Sayang Sekali Anda Ditolak Untuk masuk yahahahahahah kasian')
+    //         ->line('Silakan cek aplikasi untuk informasi lebih lanjut.')
+    //         ->line('Terima kasih!');
+    // }
+
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->greeting('Halo, ' . $this->pendaftar->name . '!')
             ->subject('PT Karya Rama Perkasa')
-            ->line('Sayang Sekali Anda Ditolak Untuk masuk yahahahahahah kasian')
-            ->line('Silakan cek aplikasi untuk informasi lebih lanjut.')
-            ->line('Terima kasih!');
+            ->markdown('email.rejectedNotification', [
+                'pendaftar' => $this->pendaftar
+            ]);
     }
 
     /**

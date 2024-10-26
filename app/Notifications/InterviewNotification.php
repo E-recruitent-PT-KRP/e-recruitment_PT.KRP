@@ -36,15 +36,25 @@ class InterviewNotification extends Notification implements ShouldQueue
     /**
      * Get the mail representation of the notification.
      */
+    // public function toMail($notifiable)
+    // {
+    //     return (new MailMessage)
+    //         ->greeting('Halo, ' . $this->pendaftar->name . '!')
+    //         ->subject('Notifikasi Interview')
+    //         ->line('Pendaftaran anda sebagai : '. $this->pendaftar->job->job_name)
+    //         ->line('Status Anda telah diperbarui menjadi "Interview".')
+    //         ->line('Jadwal Interview Anda Adalah Tanggal :' . $this->pendaftar->tanggal_interview)
+    //         ->line('Silakan cek aplikasi untuk informasi lebih lanjut.')
+    //         ->line('Terima kasih!');
+    // }
+
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->greeting('Halo, ' . $this->pendaftar->name . '!')
             ->subject('Notifikasi Interview')
-            ->line('Status Anda telah diperbarui menjadi "Interview".')
-            ->line('Jadwal Interview Anda Adalah Tanggal :' . $this->pendaftar->tanggal_interview)
-            ->line('Silakan cek aplikasi untuk informasi lebih lanjut.')
-            ->line('Terima kasih!');
+            ->markdown('email.interviewNotification', [
+                'pendaftar' => $this->pendaftar
+            ]);
     }
 
     /**

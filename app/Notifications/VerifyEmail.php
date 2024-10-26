@@ -32,17 +32,30 @@ class VerifyEmail extends Notification implements ShouldQueue
     //         ->line('Thank you for using our application!');
     // }
 
+    // public function toMail($notifiable)
+    // {
+    //     // Menggunakan metode verificationUrl yang telah didefinisikan
+    //     $verificationUrl = $this->verificationUrl($notifiable);
+
+    //     return (new MailMessage)
+    //         ->greeting('Hello, ' . $notifiable->name . '!')
+    //         ->subject('Verifikasi Email PT Karya Rama Perkasa')
+    //         ->line('Terima kasih telah membuat akun pada PT Karya Rama Perkasa! Klik tombol di bawah untuk memverifikasi email Anda.')
+    //         ->action('Verifikasi Email Anda', $verificationUrl)
+    //         ->line('Jika Anda tidak mendaftar, abaikan email ini.');
+    // }
+
     public function toMail($notifiable)
     {
-        // Menggunakan metode verificationUrl yang telah didefinisikan
+        // Menggunakan metode verificationUrl untuk menghasilkan link verifikasi
         $verificationUrl = $this->verificationUrl($notifiable);
 
         return (new MailMessage)
-            ->greeting('Hello, ' . $notifiable->name . '!')
             ->subject('Verifikasi Email PT Karya Rama Perkasa')
-            ->line('Terima kasih telah membuat akun pada PT Karya Rama Perkasa! Klik tombol di bawah untuk memverifikasi email Anda.')
-            ->action('Verifikasi Email Anda', $verificationUrl)
-            ->line('Jika Anda tidak mendaftar, abaikan email ini.');
+            ->markdown('email.verifEmail', [
+                'notifiable' => $notifiable,
+                'verificationUrl' => $verificationUrl
+            ]);
     }
 
     protected function verificationUrl($notifiable)
