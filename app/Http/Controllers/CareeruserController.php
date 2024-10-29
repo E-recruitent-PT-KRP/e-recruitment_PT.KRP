@@ -115,11 +115,19 @@ class CareeruserController extends Controller
     //     return view('user.career.show', compact('career')); // Kirim data career ke view
     // }
 
-    public function show(string $id)
+    // public function show($id)
+    // {
+
+    //     $career = Career::findOrFail($id);
+    //     dd($id->all());
+
+    //     return view('user.career.show', compact('career'));
+    // }
+
+    public function show($id)
     {
-        \Log::info('ID yang diterima untuk detail: ' . $id);
-        $career = Career::findOrFail($id);
-        return view('user.career.show', compact('career'));
+        $job = Career::findOrFail($id); // Mengambil detail pekerjaan berdasarkan ID
+        return view('user.career.show', compact('job')); // Mengarahkan ke view detail pekerjaan
     }
 
     /**

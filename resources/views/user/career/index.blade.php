@@ -105,7 +105,7 @@
                                                             {{-- <a href="{{ route('careeruser.show', ['careeruser' => $job->id]) }}"
                                                                 class="btn btn-secondary"
                                                                 style="margin-top: 10px">Detail</a> --}}
-                                                            <a href="{{ route('careeruser.show', ['careeruser' => $job->id]) }}"
+                                                            <a href="{{ route('careeruser.show', ['id' => $job->id]) }}"
                                                                 class="btn btn-secondary"
                                                                 style="margin-top: 10px">Detail</a>
                                                         @endif
