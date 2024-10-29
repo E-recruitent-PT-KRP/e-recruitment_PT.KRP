@@ -30,5 +30,6 @@ class Pendaftar extends Model
     {
         return $this->belongsTo(Career::class, 'job_id');
     }
+    
 }
 

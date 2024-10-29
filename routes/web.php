@@ -61,7 +61,7 @@ Route::prefix('admin')->group(function () {
         // Pendaftar Routes
         Route::controller(PendaftarController::class)->name('pendaftar.')->group(function () {
             Route::get('/pendaftar', 'index')->name('index');
-            Route::get('/pendaftar/{id}', 'show')->name('show');
+            Route::get('/pendaftar/{id}', 'show')->name('show'); // Ini yang dimaksud
             Route::get('/cv/{id}', 'showCv')->name('showCv');
 
             Route::patch('/pendaftar/{id}/tes', 'tes')->name('tes');

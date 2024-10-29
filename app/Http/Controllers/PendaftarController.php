@@ -33,16 +33,23 @@ class PendaftarController extends Controller
     {
         // Cari data pendaftar berdasarkan ID
         $pendaftar = Pendaftar::findOrFail($id);
+        // Mendapatkan pelamar berdasarkan user_id
+        $pelamar = Pelamar::where('user_id', $pendaftar->user_id)->firstOrFail();
 
-        // Cari pelamar yang berkaitan dengan pendaftar tersebut
-        $pelamar = Pelamar::where('id', $pendaftar->user_id)->firstOrFail();
+
+        // // Cari pelamar yang berkaitan dengan pendaftar tersebut
+        // $pelamar = Pelamar::where('id', $pendaftar->user_id)->firstOrFail();
 
         return view('admin.pendaftar.show', compact('pendaftar', 'pelamar'));
     }
 
     public function showCv($id)
     {
-        $pelamar = Pelamar::find($id);
+        // $pelamar = Pelamar::find($id);
+        // Mendapatkan pelamar berdasarkan user_id
+        $pendaftar = Pendaftar::findOrFail($id);
+        $pelamar = Pelamar::where('user_id', $pendaftar->user_id)->firstOrFail();
+
 
         if ($pelamar && $pelamar->cv) {
             $pathToFile = public_path('images/cv/' . $pelamar->cv);
