@@ -1,14 +1,16 @@
 @extends('layout.app')
 @section('konten')
     <!-- Hero Section -->
-    <section id="hero" class="hero section" style="background-image: url('assets/img/menu/kontruksi.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 80vh;background-color: rgba(255, 255, 255, 0.7); background-blend-mode: overlay;">
-       
+    <section id="hero" class="hero section"
+        style="background-image: url('assets/img/menu/kontruksi.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 80vh;background-color: rgba(255, 255, 255, 0.7); background-blend-mode: overlay;">
+
 
         <div class="container">
             <div class="row gy-4 justify-content-center justify-content-lg-between">
                 <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center">
                     <h1 data-aos="fade-up">Solusi Tepat Tenaga Kerja dan Konstruksi</h1>
-                    <p data-aos="fade-up" data-aos-delay="100"> Mitra Profesional dalam Penyediaan Tenaga Kerja, Transportasi, Material, dan Konstruksi, Membangun Kerja Sama untuk Kemajuan Bersama</p>
+                    <p data-aos="fade-up" data-aos-delay="100"> Mitra Profesional dalam Penyediaan Tenaga Kerja, Transportasi,
+                        Material, dan Konstruksi, Membangun Kerja Sama untuk Kemajuan Bersama</p>
                     <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
                         <a href="{{ route('login') }}" class="btn-get-started">Login/Register</a>
                         {{-- <a href="#book-a-table" class="btn-get-secondary">Register</a> --}}
@@ -61,33 +63,33 @@
                                     storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
                         </ul> --}}
                         <p>
-                            PT KARYA RAMA PERKASA         
+                            PT KARYA RAMA PERKASA
                             ( KRP ) berdiri
-                             sebagai perusahaan di bidang Penyedia tenaga
-                             kerja,transportasi, suplier material,Konstruksi
-                             ,Dll. Perusahaan kami menawarkan kerja sama dengan
-                             berbagai perusahaan pada berbagai bentuk
-                             pekerjaansesuaibidangkeahlian perusaan kami.
-                             Company Profile ini di buat sebagai dasar
-                             pertimbangan, penawaran, kerja sama, dan informasi
-                             produk yang dapat di kerjakan oleh perusahaan kami,
-                             perusahaan kami memiliki pengalaman dan value yang
-                             bagus di perusahaan lain tentunya bisa menjadi
-                             bahan pertimbangan bagi perusahaan atau instansi
-                             bapak / ibu untuk memberi kepercayaan kepada
-                             kami.
-                             Semoga Company profile perusahaan kami dapat
-                             memberi wacana dan pertimbangan untuk menjalin
-                             kerja sama yang baik. Akhir kata, kami ucapkan
-                             terima kasih atas kesempatan bapak / ibu menerima
-                             dan membaca company profile ini dan kami harapkan
-                             kerjasamanya
+                            sebagai perusahaan di bidang Penyedia tenaga
+                            kerja,transportasi, suplier material,Konstruksi
+                            ,Dll. Perusahaan kami menawarkan kerja sama dengan
+                            berbagai perusahaan pada berbagai bentuk
+                            pekerjaansesuaibidangkeahlian perusaan kami.
+                            Company Profile ini di buat sebagai dasar
+                            pertimbangan, penawaran, kerja sama, dan informasi
+                            produk yang dapat di kerjakan oleh perusahaan kami,
+                            perusahaan kami memiliki pengalaman dan value yang
+                            bagus di perusahaan lain tentunya bisa menjadi
+                            bahan pertimbangan bagi perusahaan atau instansi
+                            bapak / ibu untuk memberi kepercayaan kepada
+                            kami.
+                            Semoga Company profile perusahaan kami dapat
+                            memberi wacana dan pertimbangan untuk menjalin
+                            kerja sama yang baik. Akhir kata, kami ucapkan
+                            terima kasih atas kesempatan bapak / ibu menerima
+                            dan membaca company profile ini dan kami harapkan
+                            kerjasamanya
                         </p>
 
-                        <div class="position-relative mt-4">
+                        {{-- <div class="position-relative mt-4">
                             <img src="assets/img/about-2.jpg" class="img-fluid" alt="">
                             <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -105,15 +107,14 @@
 
                 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="why-box">
-                        <h3>Why Choose Yummy</h3>
+                        <h3>Kenapa Harus Pilih PT Karya Rama Perkasa</h3>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                            Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus
-                            optio ad corporis.
+                            PT. Karya Rama Perkasa (KRP) adalah perusahaan yang bergerak di berbagai bidang layanan, dari
+                            penyediaan tenaga kerja, transportasi, hingga konstruksi dan suplier material. PT. Karya Rama
+                            Perkasa bisa menjadi mitra kerja yang tepat:
                         </p>
                         <div class="text-center">
-                            <a href="#" class="more-btn"><span>Learn More</span> <i
+                            <a href="#" class="more-btn"><span>Selengkapnya</span> <i
                                     class="bi bi-chevron-right"></i></a>
                         </div>
                     </div>
@@ -125,27 +126,30 @@
                         <div class="col-xl-4">
                             <div class="icon-box d-flex flex-column justify-content-center align-items-center">
                                 <i class="bi bi-clipboard-data"></i>
-                                <h4>Corporis voluptates officia eiusmod</h4>
-                                <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut
-                                    aliquip</p>
+                                <h4>Pengalaman dan Reputasi</h4>
+                                <p>Memiliki pengalaman di berbagai perusahaan yang sudah bekerja sama menunjukkan bahwa KRP
+                                    telah terbukti dapat diandalkan dan memberikan
+                                    layanan yang berkualitas.</p>
                             </div>
                         </div><!-- End Icon Box -->
 
                         <div class="col-xl-4" data-aos="fade-up" data-aos-delay="300">
                             <div class="icon-box d-flex flex-column justify-content-center align-items-center">
                                 <i class="bi bi-gem"></i>
-                                <h4>Ullamco laboris ladore lore pan</h4>
-                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                                    deserunt</p>
+                                <h4>Bidang Usaha yang Beragam</h4>
+                                <p>Layanan di berbagai sektor, termasuk konstruksi, perdagangan besar,
+                                    penyedia jasa untuk gedung dan pertamanan, transportasi, penyedia makanan dan minuman,
+                                    serta konstruksi bangunan sipil seperti jalan, jembatan, dan lainnya.</p>
                             </div>
                         </div><!-- End Icon Box -->
 
                         <div class="col-xl-4" data-aos="fade-up" data-aos-delay="400">
                             <div class="icon-box d-flex flex-column justify-content-center align-items-center">
                                 <i class="bi bi-inboxes"></i>
-                                <h4>Labore consequatur incidid dolore</h4>
-                                <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere
-                                </p>
+                                <h4>Legalitas dan Izin Lengkap</h4>
+                                <p>PT. Karya Rama Perkasa telah melengkapi semua izin dan legalitas usaha, termasuk Akta
+                                    Pendirian PT, SK Menkumham, NPWP, NIB, surat izin usaha, dan dokumen lainnya yang
+                                    menunjukkan bahwa KRP merupakan perusahaan yang sah dan resmi.</p>
                             </div>
                         </div><!-- End Icon Box -->
 
@@ -161,7 +165,7 @@
     <!-- Stats Section -->
     <section id="stats" class="stats section dark-background">
 
-        <img src="assets/img/stats-bg.jpg" alt="" data-aos="fade-in">
+        <img src="assets/img/gedung.jpg" alt="" data-aos="fade-in">
 
         <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
 
@@ -171,7 +175,7 @@
                     <div class="stats-item text-center w-100 h-100">
                         <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
                             class="purecounter"></span>
-                        <p>Clients</p>
+                        <p>Klien</p>
                     </div>
                 </div><!-- End Stats Item -->
 
@@ -179,7 +183,7 @@
                     <div class="stats-item text-center w-100 h-100">
                         <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
                             class="purecounter"></span>
-                        <p>Projects</p>
+                        <p>Proyek</p>
                     </div>
                 </div><!-- End Stats Item -->
 
@@ -195,7 +199,7 @@
                     <div class="stats-item text-center w-100 h-100">
                         <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1"
                             class="purecounter"></span>
-                        <p>Workers</p>
+                        <p>Pekerja</p>
                     </div>
                 </div><!-- End Stats Item -->
 
