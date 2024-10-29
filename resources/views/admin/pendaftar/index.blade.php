@@ -42,7 +42,7 @@
                     <td>{{ $item->email }}</td>
                     <td>{{ $item->job->job_name }}</td>
                     <td>{{ $item->application_date }}</td>
-                    <td>
+                    {{-- <td>
                         <span class="badge rounded-pill bg-{{ $item->status === 'pending'
                                         ? 'warning'
                                         : ($item->status === 'approved'
@@ -52,7 +52,23 @@
                                                 : 'secondary')) }}">
                             {{ ucfirst($item->status) }}
                         </span>
+                    </td> --}}
+                    <td>
+                        <span class="badge rounded-pill bg-{{ $item->status === 'pending' 
+                                                            ? 'warning' 
+                                                            : ($item->status === 'tes' 
+                                                                ? 'info'
+                                                                : ($item->status === 'interview' 
+                                                                    ? 'secondary' 
+                                                                    : ($item->status === 'mcu' 
+                                                                        ? 'primary' 
+                                                                        : ($item->status === 'diterima' 
+                                                                            ? 'success' 
+                                                                            : 'danger')))) }}">
+                            {{ ucfirst($item->status) }}
+                        </span>
                     </td>
+
                     <td>
                         <a href="{{ route('pendaftar.show', $item->id) }}" class="btn btn-info btn-sm">
                             <i class="fa fa-eye fa-sm"></i>
