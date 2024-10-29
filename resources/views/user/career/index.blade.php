@@ -86,17 +86,25 @@
 
                                                             @if (now()->between($job->open_date, $job->close_date))
                                                                 @if ($hasApplied)
-                                                                    <button class="btn btn-success" style="margin-top: 10px" disabled>Sudah Daftar</button>
+                                                                    <button class="btn btn-success" style="margin-top: 10px"
+                                                                        disabled>Sudah Daftar</button>
                                                                 @else
-                                                                    <form action="{{ route('careeruser.store', ['id' => $job->id]) }}" method="POST">
+                                                                    <form
+                                                                        action="{{ route('careeruser.store', ['id' => $job->id]) }}"
+                                                                        method="POST">
                                                                         @csrf
-                                                                        <button type="submit" class="btn btn-primary" style="margin-top: 10px">Apply</button>
+                                                                        <button type="submit" class="btn btn-primary"
+                                                                            style="margin-top: 10px">Apply</button>
                                                                     </form>
                                                                 @endif
                                                             @else
-                                                                <button class="btn btn-secondary" style="margin-top: 10px" disabled>Ditutup</button>
+                                                                <button class="btn btn-secondary" style="margin-top: 10px"
+                                                                    disabled>Ditutup</button>
                                                             @endif
 
+                                                            {{-- <a href="{{ route('careeruser.show', ['careeruser' => $job->id]) }}"
+                                                                class="btn btn-secondary"
+                                                                style="margin-top: 10px">Detail</a> --}}
                                                             <a href="{{ route('careeruser.show', ['careeruser' => $job->id]) }}"
                                                                 class="btn btn-secondary"
                                                                 style="margin-top: 10px">Detail</a>

@@ -106,12 +106,20 @@ class CareeruserController extends Controller
     /**
      * Display the specified resource.
      */
+    // public function show(string $id)
+    // {
+
+    //     $career = Career::findOrFail($id); // Mengambil pekerjaan berdasarkan ID
+    //     $career->open_date = Carbon::parse($career->open_date)->format('d F Y');
+    //     $career->close_date = Carbon::parse($career->close_date)->format('d F Y');
+    //     return view('user.career.show', compact('career')); // Kirim data career ke view
+    // }
+
     public function show(string $id)
     {
-        $career = Career::findOrFail($id); // Mengambil pekerjaan berdasarkan ID
-        $career->open_date = Carbon::parse($career->open_date)->format('d F Y');
-        $career->close_date = Carbon::parse($career->close_date)->format('d F Y');
-        return view('user.career.show', compact('career')); // Kirim data career ke view
+        \Log::info('ID yang diterima untuk detail: ' . $id);
+        $career = Career::findOrFail($id);
+        return view('user.career.show', compact('career'));
     }
 
     /**
