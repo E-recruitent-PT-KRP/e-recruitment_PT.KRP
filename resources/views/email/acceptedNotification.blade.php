@@ -10,7 +10,11 @@ Kami dengan senang hati menginformasikan bahwa Anda telah **DITERIMA** sebagai *
 Berikut adalah beberapa hal yang perlu Anda persiapkan untuk memulai perjalanan Anda bersama kami:
 
 1. **Persiapan Dokumen**  
-   Pastikan semua dokumen penting seperti KTP, NPWP, dan dokumen pendukung lainnya sudah siap untuk proses administrasi lebih lanjut.
+   Harap membawa berkas-berkas hardcopy berikut:
+   - **Curriculum Vitae (CV)**
+   - **Surat Keterangan Catatan Kepolisian (SKCK)**
+   - **Fotokopi NPWP**
+   - **Fotokopi KTP**
 
 2. **Informasi Onboarding**  
    Tim HR kami akan segera menghubungi Anda untuk memberikan informasi lebih lanjut mengenai jadwal dan prosedur onboarding. Mohon tetap memeriksa email atau aplikasi kami untuk pembaruan.
