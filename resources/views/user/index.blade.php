@@ -1,60 +1,60 @@
 @extends('layout.app')
 @section('konten')
-<!-- Hero Section -->
-<section id="hero" class="hero section"
-    style="background-image: url('assets/img/menu/kontruksi.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 80vh;background-color: rgba(255, 255, 255, 0.7); background-blend-mode: overlay;">
+    <!-- Hero Section -->
+    <section id="hero" class="hero section"
+        style="background-image: url('assets/img/menu/kontruksi.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 80vh;background-color: rgba(255, 255, 255, 0.7); background-blend-mode: overlay;">
 
 
-    <div class="container">
-        <div class="row gy-4 justify-content-center justify-content-lg-between">
-            <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center">
-                <h1 data-aos="fade-up">Solusi Tepat Tenaga Kerja dan Konstruksi</h1>
-                <p data-aos="fade-up" data-aos-delay="100"> Mitra Profesional dalam Penyediaan Tenaga Kerja,
-                    Transportasi, Material, dan Konstruksi, Membangun Kerja Sama untuk Kemajuan Bersama</p>
-                <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
+        <div class="container">
+            <div class="row gy-4 justify-content-center justify-content-lg-between">
+                <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                    <h1 data-aos="fade-up">Solusi Tepat Tenaga Kerja dan Konstruksi</h1>
+                    <p data-aos="fade-up" data-aos-delay="100"> Mitra Profesional dalam Penyediaan Tenaga Kerja,
+                        Transportasi, Material, dan Konstruksi, Membangun Kerja Sama untuk Kemajuan Bersama</p>
+                    <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
 
-                    {{-- <a href="#book-a-table" class="btn-get-secondary">Register</a> --}}
-                    {{-- <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8"
+                        {{-- <a href="#book-a-table" class="btn-get-secondary">Register</a> --}}
+                        {{-- <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8"
                         class="glightbox btn-watch-video d-flex align-items-center"><i
                             class="bi bi-play-circle"></i><span>Register</span></a> --}}
+                    </div>
                 </div>
-            </div>
-            {{-- <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
+                {{-- <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
                 <img src="assets/img/menu/kontruksi.jpg" class="img-fluid animated" alt="">
             </div> --}}
-        </div>
-    </div>
-
-
-</section><!-- /Hero Section -->
-
-<!-- About Section -->
-<section id="about" class="about section">
-
-    <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
-        <h2>Tentang Kami<br></h2>
-        <p><span>Pelajari </span> <span class="description-title">Selengkapnya</span></p>
-    </div><!-- End Section Title -->
-
-    <div class="container">
-
-        <div class="row gy-4">
-            <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
-                <img src="assets/img/about.jpg" class="img-fluid mb-4" alt="">
-                <div class="book-a-table">
-                    <h3>Ajukan Pertanyaan</h3>
-                    <p>+62 815-7491-2141</p>
-                </div>
             </div>
-            <div class="col-lg-5" data-aos="fade-up" data-aos-delay="250">
-                <div class="content ps-0 ps-lg-5">
-                    {{-- <p class="fst-italic">
+        </div>
+
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Tentang Kami<br></h2>
+            <p><span>Pelajari </span> <span class="description-title">Selengkapnya</span></p>
+        </div><!-- End Section Title -->
+
+        <div class="container">
+
+            <div class="row gy-4">
+                <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
+                    <img src="assets/img/about.jpg" class="img-fluid mb-4" alt="">
+                    <div class="book-a-table">
+                        <h3>Ajukan Pertanyaan</h3>
+                        <p>+62 815-7491-2141</p>
+                    </div>
+                </div>
+                <div class="col-lg-5" data-aos="fade-up" data-aos-delay="250">
+                    <div class="content ps-0 ps-lg-5">
+                        {{-- <p class="fst-italic">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                         incididunt ut labore et dolore
                         magna aliqua.
                     </p> --}}
-                    {{-- <ul>
+                        {{-- <ul>
                         <li><i class="bi bi-check-circle-fill"></i> <span>Ullamco laboris nisi ut aliquip ex ea
                                 commodo consequat.</span></li>
                         <li><i class="bi bi-check-circle-fill"></i> <span>Duis aute irure dolor in reprehenderit
@@ -63,537 +63,213 @@
                                 commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta
                                 storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
                     </ul> --}}
-                    <p>
-                        PT KARYA RAMA PERKASA
-                        ( KRP ) berdiri
-                        sebagai perusahaan di bidang Penyedia tenaga
-                        kerja,transportasi, suplier material,Konstruksi
-                        ,Dll. Perusahaan kami menawarkan kerja sama dengan
-                        berbagai perusahaan pada berbagai bentuk
-                        pekerjaansesuaibidangkeahlian perusaan kami.
-                        Company Profile ini di buat sebagai dasar
-                        pertimbangan, penawaran, kerja sama, dan informasi
-                        produk yang dapat di kerjakan oleh perusahaan kami,
-                        perusahaan kami memiliki pengalaman dan value yang
-                        bagus di perusahaan lain tentunya bisa menjadi
-                        bahan pertimbangan bagi perusahaan atau instansi
-                        bapak / ibu untuk memberi kepercayaan kepada
-                        kami.
-                        Semoga Company profile perusahaan kami dapat
-                        memberi wacana dan pertimbangan untuk menjalin
-                        kerja sama yang baik. Akhir kata, kami ucapkan
-                        terima kasih atas kesempatan bapak / ibu menerima
-                        dan membaca company profile ini dan kami harapkan
-                        kerjasamanya
-                    </p>
+                        <p>
+                            PT KARYA RAMA PERKASA
+                            ( KRP ) berdiri
+                            sebagai perusahaan di bidang Penyedia tenaga
+                            kerja,transportasi, suplier material,Konstruksi
+                            ,Dll. Perusahaan kami menawarkan kerja sama dengan
+                            berbagai perusahaan pada berbagai bentuk
+                            pekerjaansesuaibidangkeahlian perusaan kami.
+                            Company Profile ini di buat sebagai dasar
+                            pertimbangan, penawaran, kerja sama, dan informasi
+                            produk yang dapat di kerjakan oleh perusahaan kami,
+                            perusahaan kami memiliki pengalaman dan value yang
+                            bagus di perusahaan lain tentunya bisa menjadi
+                            bahan pertimbangan bagi perusahaan atau instansi
+                            bapak / ibu untuk memberi kepercayaan kepada
+                            kami.
+                            Semoga Company profile perusahaan kami dapat
+                            memberi wacana dan pertimbangan untuk menjalin
+                            kerja sama yang baik. Akhir kata, kami ucapkan
+                            terima kasih atas kesempatan bapak / ibu menerima
+                            dan membaca company profile ini dan kami harapkan
+                            kerjasamanya
+                        </p>
 
-                    {{-- <div class="position-relative mt-4">
+                        {{-- <div class="position-relative mt-4">
                         <img src="assets/img/about-2.jpg" class="img-fluid" alt="">
                         <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
                     </div> --}}
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-</section><!-- /About Section -->
-
-<!-- Why Us Section -->
-<section id="why-us" class="why-us section light-background">
-
-    <div class="container">
-
-        <div class="row gy-4">
-
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="why-box">
-                    <h3>Kenapa Harus Pilih PT Karya Rama Perkasa</h3>
-                    <p>
-                        PT. Karya Rama Perkasa (KRP) adalah perusahaan yang bergerak di berbagai bidang layanan, dari
-                        penyediaan tenaga kerja, transportasi, hingga konstruksi dan suplier material. PT. Karya Rama
-                        Perkasa bisa menjadi mitra kerja yang tepat:
-                    </p>
-                    <div class="text-center">
-                        <a href="#" class="more-btn"><span>Selengkapnya</span> <i class="bi bi-chevron-right"></i></a>
                     </div>
                 </div>
-            </div><!-- End Why Box -->
-
-            <div class="col-lg-8 d-flex align-items-stretch">
-                <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
-
-                    <div class="col-xl-4">
-                        <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-                            <i class="bi bi-clipboard-data"></i>
-                            <h4>Pengalaman dan Reputasi</h4>
-                            <p>Memiliki pengalaman di berbagai perusahaan yang sudah bekerja sama menunjukkan bahwa KRP
-                                telah terbukti dapat diandalkan dan memberikan
-                                layanan yang berkualitas.</p>
-                        </div>
-                    </div><!-- End Icon Box -->
-
-                    <div class="col-xl-4" data-aos="fade-up" data-aos-delay="300">
-                        <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-                            <i class="bi bi-gem"></i>
-                            <h4>Bidang Usaha yang Beragam</h4>
-                            <p>Layanan di berbagai sektor, termasuk konstruksi, perdagangan besar,
-                                penyedia jasa untuk gedung dan pertamanan, transportasi, penyedia makanan dan minuman,
-                                serta konstruksi bangunan sipil seperti jalan, jembatan, dan lainnya.</p>
-                        </div>
-                    </div><!-- End Icon Box -->
-
-                    <div class="col-xl-4" data-aos="fade-up" data-aos-delay="400">
-                        <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-                            <i class="bi bi-inboxes"></i>
-                            <h4>Legalitas dan Izin Lengkap</h4>
-                            <p>PT. Karya Rama Perkasa telah melengkapi semua izin dan legalitas usaha, termasuk Akta
-                                Pendirian PT, SK Menkumham, NPWP, NIB, surat izin usaha, dan dokumen lainnya yang
-                                menunjukkan bahwa KRP merupakan perusahaan yang sah dan resmi.</p>
-                        </div>
-                    </div><!-- End Icon Box -->
-
-                </div>
             </div>
 
         </div>
 
-    </div>
+    </section><!-- /About Section -->
 
-</section><!-- /Why Us Section -->
+    <!-- Why Us Section -->
+    <section id="why-us" class="why-us section light-background">
 
-<!-- Stats Section -->
-<section id="stats" class="stats section dark-background">
+        <div class="container">
 
-    <img src="assets/img/gedung.jpg" alt="" data-aos="fade-in">
+            <div class="row gy-4">
 
-    <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="why-box">
+                        <h3>Kenapa Harus Pilih PT Karya Rama Perkasa</h3>
+                        <p>
+                            PT. Karya Rama Perkasa (KRP) adalah perusahaan yang bergerak di berbagai bidang layanan, dari
+                            penyediaan tenaga kerja, transportasi, hingga konstruksi dan suplier material. PT. Karya Rama
+                            Perkasa bisa menjadi mitra kerja yang tepat:
+                        </p>
+                        <div class="text-center">
+                            <a href="#" class="more-btn"><span>Selengkapnya</span> <i
+                                    class="bi bi-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div><!-- End Why Box -->
 
-        <div class="row gy-4">
+                <div class="col-lg-8 d-flex align-items-stretch">
+                    <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
 
-            <div class="col-lg-3 col-md-6">
-                <div class="stats-item text-center w-100 h-100">
-                    <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
-                        class="purecounter"></span>
-                    <p>Klien</p>
+                        <div class="col-xl-4">
+                            <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                                <i class="bi bi-clipboard-data"></i>
+                                <h4>Pengalaman dan Reputasi</h4>
+                                <p>Memiliki pengalaman di berbagai perusahaan yang sudah bekerja sama menunjukkan bahwa KRP
+                                    telah terbukti dapat diandalkan dan memberikan
+                                    layanan yang berkualitas.</p>
+                            </div>
+                        </div><!-- End Icon Box -->
+
+                        <div class="col-xl-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                                <i class="bi bi-gem"></i>
+                                <h4>Bidang Usaha yang Beragam</h4>
+                                <p>Layanan di berbagai sektor, termasuk konstruksi, perdagangan besar,
+                                    penyedia jasa untuk gedung dan pertamanan, transportasi, penyedia makanan dan minuman,
+                                    serta konstruksi bangunan sipil seperti jalan, jembatan, dan lainnya.</p>
+                            </div>
+                        </div><!-- End Icon Box -->
+
+                        <div class="col-xl-4" data-aos="fade-up" data-aos-delay="400">
+                            <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                                <i class="bi bi-inboxes"></i>
+                                <h4>Legalitas dan Izin Lengkap</h4>
+                                <p>PT. Karya Rama Perkasa telah melengkapi semua izin dan legalitas usaha, termasuk Akta
+                                    Pendirian PT, SK Menkumham, NPWP, NIB, surat izin usaha, dan dokumen lainnya yang
+                                    menunjukkan bahwa KRP merupakan perusahaan yang sah dan resmi.</p>
+                            </div>
+                        </div><!-- End Icon Box -->
+
+                    </div>
                 </div>
-            </div><!-- End Stats Item -->
 
-            <div class="col-lg-3 col-md-6">
-                <div class="stats-item text-center w-100 h-100">
-                    <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
-                        class="purecounter"></span>
-                    <p>Proyek</p>
-                </div>
-            </div><!-- End Stats Item -->
-
-            <div class="col-lg-3 col-md-6">
-                <div class="stats-item text-center w-100 h-100">
-                    <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1"
-                        class="purecounter"></span>
-                    <p>Hours Of Support</p>
-                </div>
-            </div><!-- End Stats Item -->
-
-            <div class="col-lg-3 col-md-6">
-                <div class="stats-item text-center w-100 h-100">
-                    <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1"
-                        class="purecounter"></span>
-                    <p>Pekerja</p>
-                </div>
-            </div><!-- End Stats Item -->
+            </div>
 
         </div>
 
-    </div>
+    </section><!-- /Why Us Section -->
 
-</section><!-- /Stats Section -->
+    <!-- Stats Section -->
+    <section id="stats" class="stats section dark-background">
 
+        <img src="assets/img/gedung.jpg" alt="" data-aos="fade-in">
 
-<!-- Menu Section -->
-<section id="menu" class="menu section">
+        <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
 
-    <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
-        <h2>Our Menu</h2>
-        <p><span>Check Our</span> <span class="description-title">Yummy Menu</span></p>
-    </div><!-- End Section Title -->
+            <div class="row gy-4">
 
-    <div class="container">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item text-center w-100 h-100">
+                        <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p>Klien</p>
+                    </div>
+                </div><!-- End Stats Item -->
 
-        <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item text-center w-100 h-100">
+                        <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p>Proyek</p>
+                    </div>
+                </div><!-- End Stats Item -->
 
-            <li class="nav-item">
-                <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#menu-starters">
-                    <h4>Starters</h4>
-                </a>
-            </li><!-- End tab nav item -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item text-center w-100 h-100">
+                        <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p>Hours Of Support</p>
+                    </div>
+                </div><!-- End Stats Item -->
 
-            <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-breakfast">
-                    <h4>Breakfast</h4>
-                </a><!-- End tab nav item -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item text-center w-100 h-100">
+                        <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p>Pekerja</p>
+                    </div>
+                </div><!-- End Stats Item -->
 
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-lunch">
-                    <h4>Lunch</h4>
-                </a>
-            </li><!-- End tab nav item -->
-
-            <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-dinner">
-                    <h4>Dinner</h4>
-                </a>
-            </li><!-- End tab nav item -->
-
-        </ul>
-
-        <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="tab-pane fade active show" id="menu-starters">
-
-                <div class="tab-header text-center">
-                    <p>Menu</p>
-                    <h3>Starters</h3>
-                </div>
-
-                <div class="row gy-5">
-
-                    <div class="col-lg-4 menu-item">
-                        <a href="assets/img/menu/menu-item-1.png" class="glightbox"><img
-                                src="assets/img/menu/menu-item-1.png" class="menu-img img-fluid" alt=""></a>
-                        <h4>Magnam Tiste</h4>
-                        <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                        </p>
-                        <p class="price">
-                            $5.95
-                        </p>
-                    </div><!-- Menu Item -->
-
-                    <div class="col-lg-4 menu-item">
-                        <a href="assets/img/menu/menu-item-2.png" class="glightbox"><img
-                                src="assets/img/menu/menu-item-2.png" class="menu-img img-fluid" alt=""></a>
-                        <h4>Aut Luia</h4>
-                        <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                        </p>
-                        <p class="price">
-                            $14.95
-                        </p>
-                    </div><!-- Menu Item -->
-
-                    <div class="col-lg-4 menu-item">
-                        <a href="assets/img/menu/menu-item-3.png" class="glightbox"><img
-                                src="assets/img/menu/menu-item-3.png" class="menu-img img-fluid" alt=""></a>
-                        <h4>Est Eligendi</h4>
-                        <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                        </p>
-                        <p class="price">
-                            $8.95
-                        </p>
-                    </div><!-- Menu Item -->
-
-                    <div class="col-lg-4 menu-item">
-                        <a href="assets/img/menu/menu-item-4.png" class="glightbox"><img
-                                src="assets/img/menu/menu-item-4.png" class="menu-img img-fluid" alt=""></a>
-                        <h4>Eos Luibusdam</h4>
-                        <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                        </p>
-                        <p class="price">
-                            $12.95
-                        </p>
-                    </div><!-- Menu Item -->
-
-                    <div class="col-lg-4 menu-item">
-                        <a href="assets/img/menu/menu-item-5.png" class="glightbox"><img
-                                src="assets/img/menu/menu-item-5.png" class="menu-img img-fluid" alt=""></a>
-                        <h4>Eos Luibusdam</h4>
-                        <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                        </p>
-                        <p class="price">
-                            $12.95
-                        </p>
-                    </div><!-- Menu Item -->
-
-                    <div class="col-lg-4 menu-item">
-                        <a href="assets/img/menu/menu-item-6.png" class="glightbox"><img
-                                src="assets/img/menu/menu-item-6.png" class="menu-img img-fluid" alt=""></a>
-                        <h4>Laboriosam Direva</h4>
-                        <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                        </p>
-                        <p class="price">
-                            $9.95
-                        </p>
-                    </div><!-- Menu Item -->
-
-                </div>
-            </div><!-- End Starter Menu Content -->
-
-            <div class="tab-pane fade" id="menu-breakfast">
-
-                <div class="tab-header text-center">
-                    <p>Menu</p>
-                    <h3>Breakfast</h3>
-                </div>
-
-                <div class="row gy-5">
-
-                    <div class="col-lg-4 menu-item">
-                        <a href="assets/img/menu/menu-item-1.png" class="glightbox"><img
-                                src="assets/img/menu/menu-item-1.png" class="menu-img img-fluid" alt=""></a>
-                        <h4>Magnam Tiste</h4>
-                        <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                        </p>
-                        <p class="price">
-                            $5.95
-                        </p>
-                    </div><!-- Menu Item -->
-
-                    <div class="col-lg-4 menu-item">
-                        <a href="assets/img/menu/menu-item-2.png" class="glightbox"><img
-                                src="assets/img/menu/menu-item-2.png" class="menu-img img-fluid" alt=""></a>
-                        <h4>Aut Luia</h4>
-                        <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                        </p>
-                        <p class="price">
-                            $14.95
-                        </p>
-                    </div><!-- Menu Item -->
-
-                    <div class="col-lg-4 menu-item">
-                        <a href="assets/img/menu/menu-item-3.png" class="glightbox"><img
-                                src="assets/img/menu/menu-item-3.png" class="menu-img img-fluid" alt=""></a>
-                        <h4>Est Eligendi</h4>
-                        <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                        </p>
-                        <p class="price">
-                            $8.95
-                        </p>
-                    </div><!-- Menu Item -->
-
-                    <div class="col-lg-4 menu-item">
-                        <a href="assets/img/menu/menu-item-4.png" class="glightbox"><img
-                                src="assets/img/menu/menu-item-4.png" class="menu-img img-fluid" alt=""></a>
-                        <h4>Eos Luibusdam</h4>
-                        <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                        </p>
-                        <p class="price">
-                            $12.95
-                        </p>
-                    </div><!-- Menu Item -->
-
-                    <div class="col-lg-4 menu-item">
-                        <a href="assets/img/menu/menu-item-5.png" class="glightbox"><img
-                                src="assets/img/menu/menu-item-5.png" class="menu-img img-fluid" alt=""></a>
-                        <h4>Eos Luibusdam</h4>
-                        <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                        </p>
-                        <p class="price">
-                            $12.95
-                        </p>
-                    </div><!-- Menu Item -->
-
-                    <div class="col-lg-4 menu-item">
-                        <a href="assets/img/menu/menu-item-6.png" class="glightbox"><img
-                                src="assets/img/menu/menu-item-6.png" class="menu-img img-fluid" alt=""></a>
-                        <h4>Laboriosam Direva</h4>
-                        <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                        </p>
-                        <p class="price">
-                            $9.95
-                        </p>
-                    </div><!-- Menu Item -->
-
-                </div>
-            </div><!-- End Breakfast Menu Content -->
-
-            <div class="tab-pane fade" id="menu-lunch">
-
-                <div class="tab-header text-center">
-                    <p>Menu</p>
-                    <h3>Lunch</h3>
-                </div>
-
-                <div class="row gy-5">
-
-                    <div class="col-lg-4 menu-item">
-                        <a href="assets/img/menu/menu-item-1.png" class="glightbox"><img
-                                src="assets/img/menu/menu-item-1.png" class="menu-img img-fluid" alt=""></a>
-                        <h4>Magnam Tiste</h4>
-                        <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                        </p>
-                        <p class="price">
-                            $5.95
-                        </p>
-                    </div><!-- Menu Item -->
-
-                    <div class="col-lg-4 menu-item">
-                        <a href="assets/img/menu/menu-item-2.png" class="glightbox"><img
-                                src="assets/img/menu/menu-item-2.png" class="menu-img img-fluid" alt=""></a>
-                        <h4>Aut Luia</h4>
-                        <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                        </p>
-                        <p class="price">
-                            $14.95
-                        </p>
-                    </div><!-- Menu Item -->
-
-                    <div class="col-lg-4 menu-item">
-                        <a href="assets/img/menu/menu-item-3.png" class="glightbox"><img
-                                src="assets/img/menu/menu-item-3.png" class="menu-img img-fluid" alt=""></a>
-                        <h4>Est Eligendi</h4>
-                        <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                        </p>
-                        <p class="price">
-                            $8.95
-                        </p>
-                    </div><!-- Menu Item -->
-
-                    <div class="col-lg-4 menu-item">
-                        <a href="assets/img/menu/menu-item-4.png" class="glightbox"><img
-                                src="assets/img/menu/menu-item-4.png" class="menu-img img-fluid" alt=""></a>
-                        <h4>Eos Luibusdam</h4>
-                        <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                        </p>
-                        <p class="price">
-                            $12.95
-                        </p>
-                    </div><!-- Menu Item -->
-
-                    <div class="col-lg-4 menu-item">
-                        <a href="assets/img/menu/menu-item-5.png" class="glightbox"><img
-                                src="assets/img/menu/menu-item-5.png" class="menu-img img-fluid" alt=""></a>
-                        <h4>Eos Luibusdam</h4>
-                        <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                        </p>
-                        <p class="price">
-                            $12.95
-                        </p>
-                    </div><!-- Menu Item -->
-
-                    <div class="col-lg-4 menu-item">
-                        <a href="assets/img/menu/menu-item-6.png" class="glightbox"><img
-                                src="assets/img/menu/menu-item-6.png" class="menu-img img-fluid" alt=""></a>
-                        <h4>Laboriosam Direva</h4>
-                        <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                        </p>
-                        <p class="price">
-                            $9.95
-                        </p>
-                    </div><!-- Menu Item -->
-
-                </div>
-            </div><!-- End Lunch Menu Content -->
-
-            <div class="tab-pane fade" id="menu-dinner">
-
-                <div class="tab-header text-center">
-                    <p>Menu</p>
-                    <h3>Dinner</h3>
-                </div>
-
-                <div class="row gy-5">
-
-                    <div class="col-lg-4 menu-item">
-                        <a href="assets/img/menu/menu-item-1.png" class="glightbox"><img
-                                src="assets/img/menu/menu-item-1.png" class="menu-img img-fluid" alt=""></a>
-                        <h4>Magnam Tiste</h4>
-                        <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                        </p>
-                        <p class="price">
-                            $5.95
-                        </p>
-                    </div><!-- Menu Item -->
-
-                    <div class="col-lg-4 menu-item">
-                        <a href="assets/img/menu/menu-item-2.png" class="glightbox"><img
-                                src="assets/img/menu/menu-item-2.png" class="menu-img img-fluid" alt=""></a>
-                        <h4>Aut Luia</h4>
-                        <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                        </p>
-                        <p class="price">
-                            $14.95
-                        </p>
-                    </div><!-- Menu Item -->
-
-                    <div class="col-lg-4 menu-item">
-                        <a href="assets/img/menu/menu-item-3.png" class="glightbox"><img
-                                src="assets/img/menu/menu-item-3.png" class="menu-img img-fluid" alt=""></a>
-                        <h4>Est Eligendi</h4>
-                        <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                        </p>
-                        <p class="price">
-                            $8.95
-                        </p>
-                    </div><!-- Menu Item -->
-
-                    <div class="col-lg-4 menu-item">
-                        <a href="assets/img/menu/menu-item-4.png" class="glightbox"><img
-                                src="assets/img/menu/menu-item-4.png" class="menu-img img-fluid" alt=""></a>
-                        <h4>Eos Luibusdam</h4>
-                        <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                        </p>
-                        <p class="price">
-                            $12.95
-                        </p>
-                    </div><!-- Menu Item -->
-
-                    <div class="col-lg-4 menu-item">
-                        <a href="assets/img/menu/menu-item-5.png" class="glightbox"><img
-                                src="assets/img/menu/menu-item-5.png" class="menu-img img-fluid" alt=""></a>
-                        <h4>Eos Luibusdam</h4>
-                        <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                        </p>
-                        <p class="price">
-                            $12.95
-                        </p>
-                    </div><!-- Menu Item -->
-
-                    <div class="col-lg-4 menu-item">
-                        <a href="assets/img/menu/menu-item-6.png" class="glightbox"><img
-                                src="assets/img/menu/menu-item-6.png" class="menu-img img-fluid" alt=""></a>
-                        <h4>Laboriosam Direva</h4>
-                        <p class="ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                        </p>
-                        <p class="price">
-                            $9.95
-                        </p>
-                    </div><!-- Menu Item -->
-
-                </div>
-            </div><!-- End Dinner Menu Content -->
+            </div>
 
         </div>
 
-    </div>
+    </section><!-- /Stats Section -->
 
-</section><!-- /Menu Section -->
+    {{-- <!-- Menu Section -->
+    <section id="menu" class="menu section">
 
-<!-- Testimonials Section -->
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Lowongan Pekerjaan</h2>
+            <p><span>Daftar</span> <span class="description-title">Lowongan Pekerjaan</span></p>
+        </div><!-- End Section Title -->
+
+        <div class="container">
+
+            <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+
+                @foreach ($careersByEducation as $educationLevel => $careers)
+                    <li class="nav-item">
+                        <a class="nav-link {{ $loop->first ? 'active show' : '' }}" data-bs-toggle="tab"
+                            href="#menu-{{ \Str::slug($educationLevel) }}">
+                            <h4>{{ $educationLevel }}</h4>
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+
+            <!-- Konten Tab -->
+            <div class="tab-content">
+                @foreach ($careersByEducation as $educationLevel => $careers)
+                    <div class="tab-pane fade {{ $loop->first ? 'active show' : '' }}"
+                        id="menu-{{ \Str::slug($educationLevel) }}">
+                        <h5>Karir untuk {{ $educationLevel }}</h5>
+                        <div class="row">
+                            @if ($careers->isNotEmpty())
+                                @foreach ($careers as $career)
+                                    <div class="col-lg-4 menu-item"
+                                        style="border: 2px solid #000; border-radius: 10px; padding: 20px; margin-bottom: 20px; margin-top: 20px; margin-left: 10px;  margin-right: 10px;">
+                                        <a href="{{ asset('assets/img/menu/menu-item-2.png') }}" class="glightbox">
+                                            <img src="{{ asset('assets/img/menu/menu-item-2.png') }}"
+                                                class="menu-img img-fluid" alt="{{ $career->job_name }}">
+                                        </a>
+                                        <h4>{{ $career->job_name }}</h4>
+                                        <p class="price">
+                                            {{ \Carbon\Carbon::parse($career->open_date)->translatedFormat('d F Y') }} -
+                                            {{ \Carbon\Carbon::parse($career->close_date)->translatedFormat('d F Y') }}
+                                        </p>
+                                        <p class="ingredients">
+                                            {{ $career->job_desc }}
+                                        </p>
+                                    </div><!-- Menu Item -->
+                                @endforeach
+                            @else
+                                <p>Tidak ada karir yang tersedia untuk level pendidikan ini.</p>
+                            @endif
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+
+    </section><!-- /Menu Section --> --}}
+
+    {{-- <!-- Testimonials Section -->
 <section id="testimonials" class="testimonials section light-background">
 
     <!-- Section Title -->
@@ -606,20 +282,20 @@
 
         <div class="swiper init-swiper">
             <script type="application/json" class="swiper-config">
-                {
-          "loop": true,
-          "speed": 600,
-          "autoplay": {
-            "delay": 5000
-          },
-          "slidesPerView": "auto",
-          "pagination": {
-            "el": ".swiper-pagination",
-            "type": "bullets",
-            "clickable": true
-          }
-        }
-            </script>
+            {
+      "loop": true,
+      "speed": 600,
+      "autoplay": {
+        "delay": 5000
+      },
+      "slidesPerView": "auto",
+      "pagination": {
+        "el": ".swiper-pagination",
+        "type": "bullets",
+        "clickable": true
+      }
+    }
+        </script>
             <div class="swiper-wrapper">
 
                 <div class="swiper-slide">
@@ -644,8 +320,8 @@
                                 </div>
                             </div>
                             <div class="col-lg-2 text-center">
-                                <img src="assets/img/testimonials/testimonials-1.jpg" class="img-fluid testimonial-img"
-                                    alt="">
+                                <img src="assets/img/testimonials/testimonials-1.jpg"
+                                    class="img-fluid testimonial-img" alt="">
                             </div>
                         </div>
                     </div>
@@ -673,8 +349,8 @@
                                 </div>
                             </div>
                             <div class="col-lg-2 text-center">
-                                <img src="assets/img/testimonials/testimonials-2.jpg" class="img-fluid testimonial-img"
-                                    alt="">
+                                <img src="assets/img/testimonials/testimonials-2.jpg"
+                                    class="img-fluid testimonial-img" alt="">
                             </div>
                         </div>
                     </div>
@@ -702,8 +378,8 @@
                                 </div>
                             </div>
                             <div class="col-lg-2 text-center">
-                                <img src="assets/img/testimonials/testimonials-3.jpg" class="img-fluid testimonial-img"
-                                    alt="">
+                                <img src="assets/img/testimonials/testimonials-3.jpg"
+                                    class="img-fluid testimonial-img" alt="">
                             </div>
                         </div>
                     </div>
@@ -731,8 +407,8 @@
                                 </div>
                             </div>
                             <div class="col-lg-2 text-center">
-                                <img src="assets/img/testimonials/testimonials-4.jpg" class="img-fluid testimonial-img"
-                                    alt="">
+                                <img src="assets/img/testimonials/testimonials-4.jpg"
+                                    class="img-fluid testimonial-img" alt="">
                             </div>
                         </div>
                     </div>
@@ -744,39 +420,39 @@
 
     </div>
 
-</section><!-- /Testimonials Section -->
+</section><!-- /Testimonials Section --> --}}
 
-<!-- Events Section -->
+    {{-- <!-- Events Section -->
 <section id="events" class="events section">
 
     <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
 
         <div class="swiper init-swiper">
             <script type="application/json" class="swiper-config">
-                {
-          "loop": true,
-          "speed": 600,
-          "autoplay": {
-            "delay": 5000
-          },
-          "slidesPerView": "auto",
-          "pagination": {
-            "el": ".swiper-pagination",
-            "type": "bullets",
-            "clickable": true
-          },
-          "breakpoints": {
-            "320": {
-              "slidesPerView": 1,
-              "spaceBetween": 40
-            },
-            "1200": {
-              "slidesPerView": 3,
-              "spaceBetween": 1
-            }
-          }
+            {
+      "loop": true,
+      "speed": 600,
+      "autoplay": {
+        "delay": 5000
+      },
+      "slidesPerView": "auto",
+      "pagination": {
+        "el": ".swiper-pagination",
+        "type": "bullets",
+        "clickable": true
+      },
+      "breakpoints": {
+        "320": {
+          "slidesPerView": 1,
+          "spaceBetween": 40
+        },
+        "1200": {
+          "slidesPerView": 3,
+          "spaceBetween": 1
         }
-            </script>
+      }
+    }
+        </script>
             <div class="swiper-wrapper">
 
                 <div class="swiper-slide event-item d-flex flex-column justify-content-end"
@@ -922,28 +598,29 @@
             <div class="col-lg-4 reservation-img" style="background-image: url(assets/img/reservation.jpg);">
             </div>
 
-            <div class="col-lg-8 d-flex align-items-center reservation-form-bg" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-8 d-flex align-items-center reservation-form-bg" data-aos="fade-up"
+                data-aos-delay="200">
                 <form action="forms/book-a-table.php" method="post" role="form" class="php-email-form">
                     <div class="row gy-4">
                         <div class="col-lg-4 col-md-6">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
-                                required="">
+                            <input type="text" name="name" class="form-control" id="name"
+                                placeholder="Your Name" required="">
                         </div>
                         <div class="col-lg-4 col-md-6">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
-                                required="">
+                            <input type="email" class="form-control" name="email" id="email"
+                                placeholder="Your Email" required="">
                         </div>
                         <div class="col-lg-4 col-md-6">
-                            <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone"
-                                required="">
+                            <input type="text" class="form-control" name="phone" id="phone"
+                                placeholder="Your Phone" required="">
                         </div>
                         <div class="col-lg-4 col-md-6">
-                            <input type="date" name="date" class="form-control" id="date" placeholder="Date"
-                                required="">
+                            <input type="date" name="date" class="form-control" id="date"
+                                placeholder="Date" required="">
                         </div>
                         <div class="col-lg-4 col-md-6">
-                            <input type="time" class="form-control" name="time" id="time" placeholder="Time"
-                                required="">
+                            <input type="time" class="form-control" name="time" id="time"
+                                placeholder="Time" required="">
                         </div>
                         <div class="col-lg-4 col-md-6">
                             <input type="number" class="form-control" name="people" id="people"
@@ -969,108 +646,110 @@
 
     </div>
 
-</section><!-- /Book A Table Section -->
+</section><!-- /Book A Table Section --> --}}
 
-<!-- Gallery Section -->
-<section id="gallery" class="gallery section light-background">
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery section light-background">
 
-    <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
-        <h2>Gallery</h2>
-        <p><span>Check</span> <span class="description-title">Our Gallery</span></p>
-    </div><!-- End Section Title -->
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Gallery</h2>
+            <p><span>Check</span> <span class="description-title">Our Gallery</span></p>
+        </div><!-- End Section Title -->
 
-    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="swiper init-swiper">
-            <script type="application/json" class="swiper-config">
-                {
-          "loop": true,
-          "speed": 600,
-          "autoplay": {
-            "delay": 5000
-          },
-          "slidesPerView": "auto",
-          "centeredSlides": true,
-          "pagination": {
-            "el": ".swiper-pagination",
-            "type": "bullets",
-            "clickable": true
-          },
-          "breakpoints": {
-            "320": {
-              "slidesPerView": 1,
-              "spaceBetween": 0
-            },
-            "768": {
-              "slidesPerView": 3,
-              "spaceBetween": 20
-            },
-            "1200": {
-              "slidesPerView": 5,
-              "spaceBetween": 20
-            }
-          }
+            <div class="swiper init-swiper">
+                <script type="application/json" class="swiper-config">
+            {
+      "loop": true,
+      "speed": 600,
+      "autoplay": {
+        "delay": 5000
+      },
+      "slidesPerView": "auto",
+      "centeredSlides": true,
+      "pagination": {
+        "el": ".swiper-pagination",
+        "type": "bullets",
+        "clickable": true
+      },
+      "breakpoints": {
+        "320": {
+          "slidesPerView": 1,
+          "spaceBetween": 0
+        },
+        "768": {
+          "slidesPerView": 3,
+          "spaceBetween": 20
+        },
+        "1200": {
+          "slidesPerView": 5,
+          "spaceBetween": 20
         }
-            </script>
-            <div class="swiper-wrapper align-items-center">
-                <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                        href="assets/img/gallery/gallery-1.jpg"><img src="assets/img/gallery/gallery-1.jpg"
-                            class="img-fluid" alt=""></a></div>
-                <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                        href="assets/img/gallery/gallery-2.jpg"><img src="assets/img/gallery/gallery-2.jpg"
-                            class="img-fluid" alt=""></a></div>
-                <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                        href="assets/img/gallery/gallery-3.jpg"><img src="assets/img/gallery/gallery-3.jpg"
-                            class="img-fluid" alt=""></a></div>
-                <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                        href="assets/img/gallery/gallery-4.jpg"><img src="assets/img/gallery/gallery-4.jpg"
-                            class="img-fluid" alt=""></a></div>
-                <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                        href="assets/img/gallery/gallery-5.jpg"><img src="assets/img/gallery/gallery-5.jpg"
-                            class="img-fluid" alt=""></a></div>
-                <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                        href="assets/img/gallery/gallery-6.jpg"><img src="assets/img/gallery/gallery-6.jpg"
-                            class="img-fluid" alt=""></a></div>
-                <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                        href="assets/img/gallery/gallery-7.jpg"><img src="assets/img/gallery/gallery-7.jpg"
-                            class="img-fluid" alt=""></a></div>
-                <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                        href="assets/img/gallery/gallery-8.jpg"><img src="assets/img/gallery/gallery-8.jpg"
-                            class="img-fluid" alt=""></a></div>
+      }
+    }
+        </script>
+                <div class="swiper-wrapper align-items-center">
+                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
+                            href="assets/img/gallery/gallery-1.jpg"><img src="assets/img/gallery/gallery-1.jpg"
+                                class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
+                            href="assets/img/gallery/gallery-2.jpg"><img src="assets/img/gallery/gallery-2.jpg"
+                                class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
+                            href="assets/img/gallery/gallery-3.jpg"><img src="assets/img/gallery/gallery-3.jpg"
+                                class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
+                            href="assets/img/gallery/gallery-4.jpg"><img src="assets/img/gallery/gallery-4.jpg"
+                                class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
+                            href="assets/img/gallery/gallery-5.jpg"><img src="assets/img/gallery/gallery-5.jpg"
+                                class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
+                            href="assets/img/gallery/gallery-6.jpg"><img src="assets/img/gallery/gallery-6.jpg"
+                                class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
+                            href="assets/img/gallery/gallery-7.jpg"><img src="assets/img/gallery/gallery-7.jpg"
+                                class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
+                            href="assets/img/gallery/gallery-8.jpg"><img src="assets/img/gallery/gallery-8.jpg"
+                                class="img-fluid" alt=""></a></div>
+                </div>
+                <div class="swiper-pagination"></div>
             </div>
-            <div class="swiper-pagination"></div>
+
         </div>
 
-    </div>
+    </section><!-- /Gallery Section -->
 
-</section><!-- /Gallery Section -->
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
 
-<!-- Contact Section -->
-<section id="contact" class="contact section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Contact</h2>
+            <p><span>Butuh Bantuan?</span> <span class="description-title">Hubungi Kami Sekarang</span></p>
+        </div><!-- End Section Title -->
 
-    <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p><span>Need Help?</span> <span class="description-title">Contact Us</span></p>
-    </div><!-- End Section Title -->
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-    <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="mb-5">
+                <iframe style="width: 100%; height: 400px;"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.7615708935036!2d107.30162567571614!3d-6.295032845325574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6977ee5d0aecc5%3A0xe2331dc582c7d2f5!2sJl.%20Kepuh%2C%20Nagasari%2C%20Kec.%20Karawang%20Bar.%2C%20Karawang%2C%20Jawa%20Barat%2041312!5e0!3m2!1sid!2sid!4v1730280497259!5m2!1sid!2sid"
+                    frameborder="0" allowfullscreen=""></iframe>
+            </div><!-- End Google Maps -->
 
-        <div class="mb-5">
-            <iframe style="width: 100%; height: 400px;"
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
-                frameborder="0" allowfullscreen=""></iframe>
-        </div><!-- End Google Maps -->
-
-        <div class="row gy-4">
+            {{-- <div class="row gy-4">
 
             <div class="col-md-6">
                 <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="200">
                     <i class="icon bi bi-geo-alt flex-shrink-0"></i>
                     <div>
-                        <h3>Address</h3>
-                        <p>A108 Adam Street, New York, NY 535022</p>
+                        <h3>Alamat</h3>
+                        <p>RUKO PLATINUM NO. 03 KEPUH WARENG RT. 001
+
+                            NAGASARI, KARAWANG BARAT KAB. KARAWANG JAWA BARAT</p>
                     </div>
                 </div>
             </div><!-- End Info Item -->
@@ -1079,8 +758,8 @@
                 <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="300">
                     <i class="icon bi bi-telephone flex-shrink-0"></i>
                     <div>
-                        <h3>Call Us</h3>
-                        <p>+1 5589 55488 55</p>
+                        <h3>No. Telp</h3>
+                        <p>+62 815-7491-2141</p>
                     </div>
                 </div>
             </div><!-- End Info Item -->
@@ -1089,8 +768,8 @@
                 <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="400">
                     <i class="icon bi bi-envelope flex-shrink-0"></i>
                     <div>
-                        <h3>Email Us</h3>
-                        <p>info@example.com</p>
+                        <h3>Email</h3>
+                        <p>ptkaryaramaperkasa@gmail.com</p>
                     </div>
                 </div>
             </div><!-- End Info Item -->
@@ -1105,40 +784,40 @@
                 </div>
             </div><!-- End Info Item -->
 
+        </div> --}}
+
+            {{-- <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
+        data-aos-delay="600">
+        <div class="row gy-4">
+
+            <div class="col-md-6">
+                <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+            </div>
+
+            <div class="col-md-6 ">
+                <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+            </div>
+
+            <div class="col-md-12">
+                <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+            </div>
+
+            <div class="col-md-12">
+                <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+            </div>
+
+            <div class="col-md-12 text-center">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                <button type="submit">Send Message</button>
+            </div>
+
+        </div>
+    </form><!-- End Contact Form --> --}}
+
         </div>
 
-        {{-- <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
-            data-aos-delay="600">
-            <div class="row gy-4">
-
-                <div class="col-md-6">
-                    <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                </div>
-
-                <div class="col-md-6 ">
-                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                </div>
-
-                <div class="col-md-12">
-                    <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                </div>
-
-                <div class="col-md-12">
-                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                    <button type="submit">Send Message</button>
-                </div>
-
-            </div>
-        </form><!-- End Contact Form --> --}}
-
-    </div>
-
-</section><!-- /Contact Section -->
+    </section><!-- /Contact Section -->
 @endsection

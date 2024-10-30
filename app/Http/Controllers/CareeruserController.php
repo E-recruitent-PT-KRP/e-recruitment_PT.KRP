@@ -85,7 +85,7 @@ class CareeruserController extends Controller
 
         // Pastikan pelamar ada
         if (!$pelamar) {
-            return redirect()->back()->with('error', 'Data pelamar tidak ditemukan.');
+            return redirect()->back()->with('error', 'Data pelamar tidak ditemukan. Silahkan Lengkapi Profil Anda');
         }
 
         $pendaftar = new Pendaftar();

@@ -20,9 +20,16 @@
                 </ul>
             </li>
             @endif --}}
-            <li class="dropdown"><a href="#"><span>Career</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <li class="dropdown"><a href="#"><span>Career</span> <i
+                        class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                    <li><a href="{{ route('careeruser.index') }}">Job Vacancy</a></li>
+                    @auth
+                        <!-- Jika sudah login, arahkan ke halaman Job Vacancy -->
+                        <li><a href="{{ route('careeruser.index') }}">Job Vacancy</a></li>
+                    @else
+                        <!-- Jika belum login, arahkan ke halaman #menu -->
+                        <li><a href="#menu">Job Vacancy</a></li>
+                    @endauth
                 </ul>
             </li>
             <li><a href="#contact">Contact</a></li>
@@ -32,27 +39,26 @@
 
     {{-- <a class="btn-getstarted" href="{{ route('login') }}">Login/Register</a> --}}
     @if (Auth::check())
-    <!-- Tampilkan nama user jika sudah login -->
-    <div class="dropdown">
-        <a class="btn-getstarted dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            <i class="fas fa-user"></i>
-            {{ Auth::user()->name }}
-        </a>
+        <!-- Tampilkan nama user jika sudah login -->
+        <div class="dropdown">
+            <a class="btn-getstarted dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-user"></i>
+                {{ Auth::user()->name }}
+            </a>
 
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <!-- Tampilkan Absensi hanya untuk role selain 'User' -->
-            @if (Auth::check() && Auth::user()->akses !== 'User')
-            <li>
-                {{-- <a class="dropdown-item" href="{{ route('karyawan.absensi') }}">
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <!-- Tampilkan Absensi hanya untuk role selain 'User' -->
+                @if (Auth::check() && Auth::user()->akses !== 'User')
+                    <li>
+                        {{-- <a class="dropdown-item" href="{{ route('karyawan.absensi') }}">
                     Absensi
                 </a> --}}
-            </li>
+                    </li>
+                @endif
 
-            @endif
-
-            <!-- Tentukan tautan Profile berdasarkan peran (akses) -->
-            {{-- <li>
+                <!-- Tentukan tautan Profile berdasarkan peran (akses) -->
+                {{-- <li>
                 @if (Auth::check() && Auth::user()->akses === 'User')
                 <a class="dropdown-item" href="{{ route('pelamar.index') }}">
                     Profile
@@ -64,14 +70,14 @@
                 @endif
             </li> --}}
 
-            <li>
-                <a class="dropdown-item" href="{{ route('pelamar.index') }}">
-                    Profil
-                </a>
-            </li>
+                <li>
+                    <a class="dropdown-item" href="{{ route('pelamar.index') }}">
+                        Profil
+                    </a>
+                </li>
 
-            {{-- <li>
-                @if(auth()->user()->pelamar)
+                {{-- <li>
+                @if (auth()->user()->pelamar)
                 <!-- Jika pelamar sudah ada -->
                 <a class="dropdown-item" href="{{ route('pelamar.show') }}">
                     Profil
@@ -84,22 +90,23 @@
                 @endif
             </li> --}}
 
-            <!-- Logout -->
-            <li>
-                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); 
+                <!-- Logout -->
+                <li>
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault(); 
                         document.getElementById('logout-form').submit();">
-                    Logout
-                </a>
-            </li>
-        </ul>
-    </div>
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
 
-    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-        @csrf
-    </form>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+        </form>
     @else
-    <!-- Tampilkan tombol login/register jika belum login -->
-    <a class="btn-getstarted" href="{{ route('login') }}">Login/Register</a>
+        <!-- Tampilkan tombol login/register jika belum login -->
+        <a class="btn-getstarted" href="{{ route('login') }}">Login/Register</a>
     @endif
 
 </div>

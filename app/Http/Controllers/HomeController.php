@@ -31,7 +31,8 @@ class HomeController extends Controller
 
     public function landing()
     {
-        return view('landing.index');
+        
+        return view('landing.index.');
     }
 
     public function profile()

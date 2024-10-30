@@ -1,14 +1,15 @@
 <?php
 
+use App\Models\Career;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ArsipController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\PelamarController;
-use App\Http\Controllers\PendaftarController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PendaftarController;
 use App\http\Controllers\Admin\AuthController;
 use App\Http\Controllers\CareeruserController;
-use App\Http\Controllers\ArsipController;
 
 
 
@@ -26,9 +27,21 @@ use App\Http\Controllers\ArsipController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+// Route::get('/', function () {
+//     return view('landing.index');
+// });
+
 Route::get('/', function () {
-    return view('landing.index');
+    // Ambil data career yang dikelompokkan berdasarkan minimum_education
+    $careersByEducation = Career::select('minimum_education', 'id', 'job_name', 'maximum_age', 'major', 'salary', 'open_date', 'close_date', 'job_desc', 'job_criteria')
+        ->orderBy('minimum_education')
+        ->get()
+        ->groupBy('minimum_education');
+
+    return view('landing.index', compact('careersByEducation'));
 });
+
+// Route::get('/', [HomeController::class, 'landing'])->name('landing.index');
 
 
 Route::prefix('admin')->group(function () {

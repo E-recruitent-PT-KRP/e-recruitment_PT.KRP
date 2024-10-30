@@ -1190,7 +1190,7 @@ section,
 }
 
 .menu .tab-content .menu-item {
-  text-align-last: center;
+  text-align-last: left;
 }
 
 .menu .tab-content .menu-item .menu-img {
@@ -1212,8 +1212,8 @@ section,
 }
 
 .menu .tab-content .menu-item .price {
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 500;
   color: var(--accent-color);
 }
 
