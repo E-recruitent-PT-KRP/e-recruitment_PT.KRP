@@ -34,11 +34,19 @@
                     <div class="row mb-3">
                         <label for="password" class="col-md-4 col-form-label text-md-end">Password</label>
                         <div class="col-md-6">
-                            <div class="input-group">
+                            {{-- <div class="input-group">
                                 <input id="password" type="password"
                                     class="form-control @error('password') is-invalid @enderror" name="password"
                                     required autocomplete="current-password">
                                 <span class="input-group-text" id="togglePassword">
+                                    <i class="bi bi-eye-slash"></i>
+                                </span>
+                            </div> --}}
+                            <div class="input-group">
+                                <input id="password" type="password"
+                                    class="form-control @error('password') is-invalid @enderror" name="password"
+                                    required autocomplete="current-password">
+                                <span class="input-group-text" id="togglePassword" style="cursor: pointer;">
                                     <i class="bi bi-eye-slash"></i>
                                 </span>
                             </div>
@@ -83,6 +91,17 @@
         </div>
     </div>
     <script src="{{ asset('asset/js/main.js') }}"></script>
+    <script>
+        document.getElementById('togglePassword').addEventListener('click', function () {
+            const passwordInput = document.getElementById('password');
+            const passwordType = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', passwordType);
+            
+            // Ganti ikon berdasarkan tipe
+            this.querySelector('i').classList.toggle('bi-eye-slash');
+            this.querySelector('i').classList.toggle('bi-eye');
+        });
+    </script>
 </body>
 
 @endsection

@@ -103,27 +103,6 @@ class CareeruserController extends Controller
         return redirect()->route('careeruser.index')->with('success', 'Pendaftaran berhasil!');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    // public function show(string $id)
-    // {
-
-    //     $career = Career::findOrFail($id); // Mengambil pekerjaan berdasarkan ID
-    //     $career->open_date = Carbon::parse($career->open_date)->format('d F Y');
-    //     $career->close_date = Carbon::parse($career->close_date)->format('d F Y');
-    //     return view('user.career.show', compact('career')); // Kirim data career ke view
-    // }
-
-    // public function show($id)
-    // {
-
-    //     $career = Career::findOrFail($id);
-    //     dd($id->all());
-
-    //     return view('user.career.show', compact('career'));
-    // }
-
     public function show($id)
     {
         $job = Career::findOrFail($id); // Mengambil detail pekerjaan berdasarkan ID

@@ -8,19 +8,23 @@
 
     <nav id="navmenu" class="navmenu">
         <ul>
-            <li><a href="#hero" class="active">Home<br></a></li>
-            <li><a href="#about">Tentang Kami</a></li>
-            <li><a href="#menu">Promo</a></li>
-            <li><a href="#events">Events</a></li>
+            <li><a href="/" class="active">Home<br></a></li>
+            <li><a href="#about">About Us</a></li>
+            {{-- <li><a href="#menu">Promo</a></li>
+            <li><a href="#events">Events</a></li> --}}
             <li><a href="#gallery">Gallery</a></li>
-            @if (Auth::check() && Auth::user()->akses !== 'Karyawan')
-            <li class="dropdown"><a href="#"><span>Karir</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            {{-- @if (Auth::check() && Auth::user()->akses !== 'Karyawan')
+            <li class="dropdown"><a href="#"><span>Career</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="{{ route('careeruser.index') }}">Lowongan Pekerjaan</a></li>
+                    <li><a href="{{ route('careeruser.index') }}">Job Vacancy</a></li>
                 </ul>
             </li>
-            @endif
+            @endif --}}
+            <li class="dropdown"><a href="#"><span>Career</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                    <li><a href="{{ route('careeruser.index') }}">Job Vacancy</a></li>
+                </ul>
+            </li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -67,16 +71,16 @@
             </li>
 
             {{-- <li>
-                @if(auth()->user()->pelamar) 
-                    <!-- Jika pelamar sudah ada -->
-                    <a class="dropdown-item" href="{{ route('pelamar.show') }}">
-                        Profil
-                    </a>
+                @if(auth()->user()->pelamar)
+                <!-- Jika pelamar sudah ada -->
+                <a class="dropdown-item" href="{{ route('pelamar.show') }}">
+                    Profil
+                </a>
                 @else
-                    <!-- Jika pelamar belum ada -->
-                    <a class="dropdown-item" href="{{ route('profile') }}">
-                        Profil
-                    </a>
+                <!-- Jika pelamar belum ada -->
+                <a class="dropdown-item" href="{{ route('profile') }}">
+                    Profil
+                </a>
                 @endif
             </li> --}}
 

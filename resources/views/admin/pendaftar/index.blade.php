@@ -10,7 +10,7 @@
     </div>
     @endif
 
-    <div class="mb-3">
+    <div class="mb-2">
         <label for="selectJob" class="form-label">Select Job:</label>
         <select id="selectJob" class="form-select" onchange="filterByJob()">
             <option value="" selected disabled>-- Select Job --</option>
@@ -20,7 +20,11 @@
         </select>
     </div>
 
-    <div class="table-responsive">
+    <div class="mb-2">
+        <button onclick="reloadPage()" class="btn btn-secondary">All Jobs</button>
+    </div>
+
+    <div class="table-responsive mb-2">
         <table class="table text-start align-middle table-striped table-hover" id="dataTable" width="100%"
             cellspacing="0">
             <thead>
@@ -84,20 +88,7 @@
     </div>
 </div>
 
-{{-- <script>
-    function filterByJob() {
-        var selectedId = document.getElementById('selectJob').value;
-        var rows = document.querySelectorAll('#pendaftarTableBody tr');
 
-        rows.forEach(function(row) {
-            if (selectedId === "" || row.getAttribute('data-job-id') == selectedId) {
-                row.style.display = "";
-            } else {
-                row.style.display = "none";
-            }
-        });
-    }
-</script> --}}
 <script>
     function updateRowNumbers() {
         var rows = document.querySelectorAll('#pendaftarTableBody tr');
@@ -127,6 +118,11 @@
     document.addEventListener('DOMContentLoaded', function() {
         updateRowNumbers();
     });
+
+
+    function reloadPage() {
+        window.location.reload(); // Reload halaman
+    }
 </script>
 
 @endsection
