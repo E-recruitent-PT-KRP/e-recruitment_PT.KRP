@@ -1,10 +1,12 @@
 <?php
 
 use App\Models\Career;
+use App\Models\Gallery;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArsipController;
 use App\Http\Controllers\CareerController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\PelamarController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PendaftarController;
@@ -37,8 +39,11 @@ Route::get('/', function () {
         ->orderBy('minimum_education')
         ->get()
         ->groupBy('minimum_education');
+    $allCareers = Career::all();
 
-    return view('landing.index', compact('careersByEducation'));
+    $galleryItems = Gallery::all();
+
+    return view('landing.index', compact('careersByEducation', 'allCareers', 'galleryItems'));
 });
 
 // Route::get('/', [HomeController::class, 'landing'])->name('landing.index');
@@ -65,6 +70,15 @@ Route::prefix('admin')->group(function () {
             Route::get('/career/{id}/edit', [CareerController::class, 'edit'])->name('edit');
             Route::put('/career/{id}', [CareerController::class, 'update'])->name('update');
             Route::delete('/career/{id}', [CareerController::class, 'destroy'])->name('destroy');
+        });
+
+        Route::name('gallery.')->group(function () {
+            Route::get('/gallery', [GalleryController::class, 'index'])->name('index');
+            Route::get('/gallery/create', [GalleryController::class, 'create'])->name('create');
+            Route::post('/gallery', [GalleryController::class, 'store'])->name('store');
+            Route::get('/gallery/{id}/edit', [GalleryController::class, 'edit'])->name('edit');
+            Route::put('/gallery/{id}', [GalleryController::class, 'update'])->name('update');
+            Route::delete('/gallery/{id}', [GalleryController::class, 'destroy'])->name('destroy');
         });
 
         //Pendaftar

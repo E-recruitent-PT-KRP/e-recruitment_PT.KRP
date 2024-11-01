@@ -220,12 +220,16 @@
         </div><!-- End Section Title -->
 
         <div class="container">
-
             <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                <li class="nav-item">
+                    <a class="nav-link active show" data-bs-toggle="tab" href="#menu-all">
+                        <h4>All</h4>
+                    </a>
+                </li>
 
                 @foreach ($careersByEducation as $educationLevel => $careers)
                     <li class="nav-item">
-                        <a class="nav-link {{ $loop->first ? 'active show' : '' }}" data-bs-toggle="tab"
+                        <a class="nav-link {{ $loop->first ? '' : '' }}" data-bs-toggle="tab"
                             href="#menu-{{ \Str::slug($educationLevel) }}">
                             <h4>{{ $educationLevel }}</h4>
                         </a>
@@ -235,31 +239,42 @@
 
             <!-- Konten Tab -->
             <div class="tab-content">
+                <!-- Konten Tab All -->
+                <div class="tab-pane fade active show" id="menu-all">
+                    <div class="row">
+                        @if ($allCareers->isNotEmpty())
+                            @foreach ($allCareers as $career)
+                                <div class="col-lg-12 menu-item"
+                                    style="border: 2px solid rgba(0, 0, 0, 0.1); border-radius: 10px; padding: 20px; margin-bottom: 20px; margin-top: 20px; margin-left: 10px;  margin-right: 10px;">
+                                    <h4>{{ $career->job_name }}</h4>
+
+                                    <p class="ingredients">{{ $career->job_desc }}</p>
+                                    <p class="ingredients">Usia Maksimal: {{ $career->maximum_age }} Tahun</p>
+                                    <p class="ingredients">Minimal Pendidikan: {{ $career->minimum_education }}</p>
+                                    <p class="price">Tanggal Penutupan:
+                                        {{ \Carbon\Carbon::parse($career->close_date)->translatedFormat('d F Y') }}</p>
+                                    
+                                </div><!-- Menu Item -->
+                            @endforeach
+                        @else
+                            <p>Tidak ada lowongan pekerjaan yang tersedia.</p>
+                        @endif
+                    </div>
+                </div>
+
                 @foreach ($careersByEducation as $educationLevel => $careers)
                     <div class="tab-pane fade {{ $loop->first ? 'active show' : '' }}"
                         id="menu-{{ \Str::slug($educationLevel) }}">
-                        {{-- <h5>Karir untuk {{ $educationLevel }}</h5> --}}
                         <div class="row">
                             @if ($careers->isNotEmpty())
                                 @foreach ($careers as $career)
-                                    <div class="col-lg-4 menu-item"
+                                    <div class="col-lg-12 menu-item"
                                         style="border: 2px solid rgba(0, 0, 0, 0.1); border-radius: 10px; padding: 20px; margin-bottom: 20px; margin-top: 20px; margin-left: 10px;  margin-right: 10px;">
-                                        {{-- <a href="{{ asset('assets/img/menu/menu-item-2.png') }}" class="glightbox">
-                                            <img src="{{ asset('assets/img/menu/menu-item-2.png') }}" class="menu-img img-fluid" alt="{{ $career->job_name }}">
-                                        </a> --}}
                                         <h4>{{ $career->job_name }}</h4>
-                                        <p class="ingredients">
-                                            {{ $career->job_desc }}
-                                        </p>
-                                        <p class="ingredients">Usia Maksimal : 
-                                            {{ $career->maximum_age }} Tahun
-                                        </p>
-                                        <p class="price"> Tanggal Penutupan : 
-                                            {{-- {{ \Carbon\Carbon::parse($career->open_date)->translatedFormat('d F Y') }} - --}}
-                                            {{ \Carbon\Carbon::parse($career->close_date)->translatedFormat('d F Y') }}
-                                        </p>
-                                        
-                                        
+                                        <p class="ingredients">{{ $career->job_desc }}</p>
+                                        <p class="ingredients">Usia Maksimal: {{ $career->maximum_age }} Tahun</p>
+                                        <p class="price">Tanggal Penutupan:
+                                            {{ \Carbon\Carbon::parse($career->close_date)->translatedFormat('d F Y') }}</p>
                                     </div><!-- Menu Item -->
                                 @endforeach
                             @else
@@ -270,6 +285,7 @@
                 @endforeach
             </div>
         </div>
+
 
     </section><!-- /Menu Section -->
 
@@ -695,30 +711,15 @@
         }
             </script>
                 <div class="swiper-wrapper align-items-center">
-                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                            href="assets/img/gallery/gallery-1.jpg"><img src="assets/img/gallery/gallery-1.jpg"
-                                class="img-fluid" alt=""></a></div>
-                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                            href="assets/img/gallery/gallery-2.jpg"><img src="assets/img/gallery/gallery-2.jpg"
-                                class="img-fluid" alt=""></a></div>
-                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                            href="assets/img/gallery/gallery-3.jpg"><img src="assets/img/gallery/gallery-3.jpg"
-                                class="img-fluid" alt=""></a></div>
-                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                            href="assets/img/gallery/gallery-4.jpg"><img src="assets/img/gallery/gallery-4.jpg"
-                                class="img-fluid" alt=""></a></div>
-                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                            href="assets/img/gallery/gallery-5.jpg"><img src="assets/img/gallery/gallery-5.jpg"
-                                class="img-fluid" alt=""></a></div>
-                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                            href="assets/img/gallery/gallery-6.jpg"><img src="assets/img/gallery/gallery-6.jpg"
-                                class="img-fluid" alt=""></a></div>
-                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                            href="assets/img/gallery/gallery-7.jpg"><img src="assets/img/gallery/gallery-7.jpg"
-                                class="img-fluid" alt=""></a></div>
-                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                            href="assets/img/gallery/gallery-8.jpg"><img src="assets/img/gallery/gallery-8.jpg"
-                                class="img-fluid" alt=""></a></div>
+                    @foreach ($galleryItems as $item)
+                        <div class="swiper-slide">
+                            <a class="glightbox" data-gallery="images-gallery"
+                                href="{{ asset('images/gallery/' . $item->image) }}">
+                                <img src="{{ asset('images/gallery/' . $item->image) }}" class="img-fluid"
+                                    alt="">
+                            </a>
+                        </div>
+                    @endforeach
                 </div>
                 <div class="swiper-pagination"></div>
             </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,8 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $galleryItems = Gallery::all();
 
-        return view('user.index');
+        return view('user.index',compact('galleryItems'));
 
         
     }

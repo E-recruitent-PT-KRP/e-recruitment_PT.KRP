@@ -51,5 +51,27 @@
                 </li>
             </ul>
         </li>
+
+
+        <li class="menu-item {{ Route::is('data-gallery.*') || Route::is('data-company.*') ? 'active open' : '' }}">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-user-x"></i>
+                <div>Pengaturan Gallery dan Company</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item {{ Route::is('gallery.index') ? 'active' : '' }}">
+                    <a href="{{ route('gallery.index') }}" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-network-chart"></i>
+                        <div data-i18n="Account Settings">Data Gallery</div>
+                    </a>
+                </li>
+                <li class="menu-item {{ Route::is('arsip.data-ditolak') ? 'active' : '' }}">
+                    <a href="{{ route('arsip.data-ditolak') }}" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-block"></i>
+                        <div data-i18n="Account Settings">Data Ditolak</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
     </ul>
 </aside>
