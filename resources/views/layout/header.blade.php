@@ -3,7 +3,7 @@
     <a href="{{ Auth::check() ? url('/home') : url('/') }}" class="logo d-flex align-items-center me-auto me-xl-0">
         {{-- <img src="assets/img/logo.png" alt=""> --}}
         <h1 class="sitename">PT. Karya Rama Perkasa</h1>
-        <span>.</span>
+        {{-- <span>.</span> --}}
     </a>
 
     <nav id="navmenu" class="navmenu">

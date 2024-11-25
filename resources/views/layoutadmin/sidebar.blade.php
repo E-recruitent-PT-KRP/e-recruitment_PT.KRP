@@ -65,12 +65,12 @@
                         <div data-i18n="Account Settings">Data Gallery</div>
                     </a>
                 </li>
-                <li class="menu-item {{ Route::is('arsip.data-ditolak') ? 'active' : '' }}">
+                {{-- <li class="menu-item {{ Route::is('arsip.data-ditolak') ? 'active' : '' }}">
                     <a href="{{ route('arsip.data-ditolak') }}" class="menu-link">
                         <i class="menu-icon tf-icons bx bx-block"></i>
                         <div data-i18n="Account Settings">Data Ditolak</div>
                     </a>
-                </li>
+                </li> --}}
             </ul>
         </li>
     </ul>

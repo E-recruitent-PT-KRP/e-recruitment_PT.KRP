@@ -5,30 +5,81 @@ namespace App\Http\Controllers;
 use App\Models\Pelamar;
 use App\Models\Pendaftar;
 use Illuminate\Http\Request;
-use App\Notifications\AcceptedNotification;
+use App\Exports\PendaftarExport;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Notifications\McuNotification;
 use App\Notifications\TesNotification;
+use App\Notifications\AcceptedNotification;
 use App\Notifications\RejectedNotification;
 use App\Notifications\InterviewNotification;
 use App\Models\Career; // Tambahkan model Career
 
 class PendaftarController extends Controller
 {
-    // public function index($careerId)
+    // public function index()
     // {
-    //     $career = Career::findOrFail($careerId);
-    //     // Kode lainnya...
-    //     return view('admin.pendaftar.index', compact('career'));
-    // }
-    public function index()
-    {
-        // Ambil data pendaftar beserta data pekerjaan
-        $pendaftar = Pendaftar::with('job')->get(); // Ambil data pendaftar beserta pekerjaan
-        $careers = Career::all(); // Ambil semua data pekerjaan
+    //     // Ambil data pendaftar beserta data pekerjaan
+    //     $pendaftar = Pendaftar::with('job')->get(); // Ambil data pendaftar beserta pekerjaan
+    //     $careers = Career::all(); // Ambil semua data pekerjaan
 
-        // Kirim data ke view
-        return view('admin.pendaftar.index', compact('pendaftar', 'careers'));
+    //     // Kirim data ke view
+    //     return view('admin.pendaftar.index', compact('pendaftar', 'careers'));
+    // }
+
+    // public function index(Request $request)
+    // {
+    //     $search = $request->query('search');
+
+    //     if (!empty($search)) {
+    //         $dataPendaftar = Pendaftar::with('job') // Eager loading relasi job
+    //             ->whereHas('job', function ($query) use ($search) { // Memfilter berdasarkan pekerjaan
+    //                 $query->where('job_name', 'like', '%' . $search . '%');
+    //             })
+    //             ->orWhere('pendaftar.name', 'like', '%' . $search . '%') // Filter nama pendaftar
+    //             ->paginate(10)
+    //             ->onEachSide(2)
+    //             ->fragment('dft');
+    //     } else {
+    //         $dataPendaftar = Pendaftar::paginate(10)
+    //             ->onEachSide(2)
+    //             ->fragment('prd');
+    //     }
+
+    //     $pendaftarList = Pendaftar::all();
+    //     return view('admin.pendaftar.index', compact('pendaftarList'))->with([
+    //         'pendaftar' => $dataPendaftar,
+    //         'search' => $search,
+    //     ]);
+    // }
+
+    public function index(Request $request)
+    {
+        $search = $request->query('search');
+
+        // Jika ada pencarian berdasarkan job_name
+        if (!empty($search)) {
+            $dataPendaftar = Pendaftar::with('job')
+                ->whereHas('job', function ($query) use ($search) {
+                    $query->where('job_name', 'like', '%' . $search . '%');
+                })
+                ->paginate(10)
+                ->onEachSide(2)
+                ->fragment('dft');
+        } else {
+            // Jika tidak ada pencarian, ambil semua data
+            $dataPendaftar = Pendaftar::paginate(10)
+                ->onEachSide(2)
+                ->fragment('prd');
+        }
+
+        $pendaftarList = Pendaftar::all(); // Ambil semua data pendaftar untuk select option
+        return view('admin.pendaftar.index', compact('pendaftarList'))->with([
+            'pendaftar' => $dataPendaftar,
+            'search' => $search,
+        ]);
     }
+
+
     public function show($id)
     {
         // Cari data pendaftar berdasarkan ID
@@ -172,6 +223,19 @@ class PendaftarController extends Controller
         $pendaftar->notify(new RejectedNotification($pendaftar));
 
         return redirect()->route('pendaftar.show', $pendaftar->id)->with('success', 'Status berhasil diubah menjadi Ditolak.');
+    }
+
+
+    // Fungsi untuk mengekspor data
+    // public function export(Request $request)
+    // {
+    //     return Excel::download(new PendaftarExport($request), 'pendaftar.xlsx');
+    // }
+
+    public function export(Request $request)
+    {
+        $search = $request->query('search');
+        return Excel::download(new PendaftarExport($search), 'pendaftar.xlsx');
     }
 
 

@@ -10,7 +10,7 @@
             </div>
         @endif
 
-        <a href="{{ route('career.create') }}" class="btn btn-primary mb-3">Create New Job</a>
+        <a href="{{ route('career.create') }}" class="btn btn-primary mb-3">Tambah Anggota</a>
 
         <div class="table-responsive">
             <table class="table text-start align-middle table-striped table-hover" id="dataTable" width="100%"

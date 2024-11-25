@@ -17,7 +17,7 @@
         <div>
           <h4>Kontak Kami</h4>
           <p>
-            <strong>Phone:</strong> <span>+62 815-7491-2141</span><br>
+            {{-- <strong>Phone:</strong> <span>+62 815-7491-2141</span><br> --}}
             <strong>Email:</strong> <span> ptkaryaramaperkasa@gmail.com</span><br>
           </p>
         </div>
@@ -54,6 +54,6 @@
       <!-- You can delete the links only if you've purchased the pro version. -->
       <!-- Licensing information: https://bootstrapmade.com/license/ -->
       <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-      Designed by <a href="https://bootstrapmade.com/">pancaawb</a>
+      {{-- Designed by <a href="https://bootstrapmade.com/">pancaawb</a> --}}
     </div>
   </div>

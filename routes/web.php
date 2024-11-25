@@ -97,6 +97,8 @@ Route::prefix('admin')->group(function () {
 
             Route::patch('/pendaftar/{id}/terima', 'terima')->name('terima');
             Route::patch('/pendaftar/{id}/tolak', 'tolak')->name('tolak');
+
+            // Route::get('/pendaftar/export', 'export')->name('export');
         });
 
         //Arsip career
@@ -130,3 +132,5 @@ Route::get('/careeruser/applyjob', [CareeruserController::class, 'applyJob'])->n
 // Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/pendaftar/export', [PendaftarController::class, 'export'])->name('pendaftar.export');
